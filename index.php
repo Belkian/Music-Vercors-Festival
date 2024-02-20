@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-    <script type="module" src="./assets/script.js"></script>
+    <script type="module" src="./assets/script.js" defer></script>
     <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 
@@ -39,9 +39,9 @@
             <!-- Si case cochée, afficher le choix des jours -->
             <section id="pass2joursDate">
                 <input type="checkbox" name="passSelection" id="choixJour12">
-                <label for="choixJour1">Pass pour deux journées du 01/07 au 02/07</label>
+                <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
                 <input type="checkbox" name="passSelection" id="choixJour23">
-                <label for="choixJour2">Pass pour deux journées du 02/07 au 03/07</label>
+                <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
             </section>
 
             <input type="checkbox" name="passSelection" id="pass3jours">
@@ -49,11 +49,11 @@
 
 
             <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
-            <input type="checkbox" name="passSelection" id="pass1jour">
+            <input type="checkbox" name="passSelection" id="pass1jourReduit">
             <label for="pass1jour">Pass 1 jour : 25€</label>
-            <input type="checkbox" name="passSelection" id="pass2jours">
+            <input type="checkbox" name="passSelection" id="pass2joursReduit">
             <label for="pass2jours">Pass 2 jours : 50€</label>
-            <input type="checkbox" name="passSelection" id="pass3jours">
+            <input type="checkbox" name="passSelection" id="pass3joursReduit">
             <label for="pass3jours">Pass 3 jours : 65€</label>
 
             <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
@@ -73,18 +73,18 @@
             <label for="tente3Nuits">Pour les 3 nuits (12€)</label>
 
             <h3>Réserver un emplacement de camion aménagé : </h3>
-            <input type="checkbox" id="vanNuit1" name="vanNuit1">
+            <input type="checkbox" class="van" id="vanNuit1" name="vanNuit1">
             <label for="vanNuit1">Pour la nuit du 01/07 (5€)</label>
-            <input type="checkbox" id="vanNuit2" name="vanNuit2">
+            <input type="checkbox" class="van" id="vanNuit2" name="vanNuit2">
             <label for="vanNuit2">Pour la nuit du 02/07 (5€)</label>
-            <input type="checkbox" id="vanNuit3" name="vanNuit3">
+            <input type="checkbox" class="van" id="vanNuit3" name="vanNuit3">
             <label for="vanNuit3">Pour la nuit du 03/07 (5€)</label>
-            <input type="checkbox" id="van3Nuits" name="van3Nuits">
+            <input type="checkbox" class="van" id="van3Nuits" name="van3Nuits">
             <label for="van3Nuits">Pour les 3 nuits (12€)</label>
 
             <h3>Venez-vous avec des enfants ?</h3>
-            <input type="checkbox" name="enfantsOui"><label for="enfantsOui">Oui</label>
-            <input type="checkbox" name="enfantsNon"><label for="enfantsNon">Non</label>
+            <input type="checkbox" name="enfantsOui" id="enfantsOui"><label for="enfantsOui">Oui</label>
+            <input type="checkbox" name="enfantsNon" id="enfantsNon"><label for="enfantsNon">Non</label>
 
             <!-- Si oui, afficher : -->
             <section>
@@ -94,9 +94,9 @@
                 <p>*Dans la limite des stocks disponibles.</p>
             </section>
 
-            <h3>Profitez de descentes en luge d'été à tarifs avantageux !</h3>
+            <h3>Profitez de descentes en luge d'été à tarifs avantageux ! (5€ / descente)</h3>
             <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
-            <input type="number" name="NombreLugesEte" id="NombreLugesEte">
+            <input type="number" name="NombreLugesEte" id="NombreLugesEte" min="0">
 
             <p class="bouton" onclick="suivant('coordonnees')">Suivant</p>
         </fieldset>
