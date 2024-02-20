@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script type="module" src="./assets/script.js"></script>
     <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
 
 <body>
-    <form action="traitement.php" id="inscription" method="POST">
+    <form action="./src/traitement.php" id="inscription" method="POST">
         <fieldset id="reservation">
             <legend>Réservation</legend>
             <h3>Nombre de réservation(s) :</h3>
