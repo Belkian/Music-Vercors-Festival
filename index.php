@@ -1,3 +1,8 @@
+<?php
+session_start();
+$Messages_Erreurs = [];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +15,7 @@
 </head>
 
 <body>
-    <form action="./src/traitement.php" id="inscription" method="POST">
+    <form action="./src/traitement_Reservation.php" id="inscription" method="POST">
         <fieldset id="reservation">
             <legend>Réservation</legend>
             <h3>Nombre de réservation(s) :</h3>
