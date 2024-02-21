@@ -2,99 +2,174 @@
 
 class Reservation
 {
-    private $_Nombre_Reservation;
-    private $_Tarif_reduit;
-    private $_Pass_jour_1;
-    private $_Pass_jour_2;
-    private $_Pass_jour_3;
-    private $_Nombre_casque;
-    private $_Nombre_luge;
-    private $_Emplacement_tente;
-    private $_Emplacement_camion;
-
-    public function __construct(int $Nombre_Reservation, bool $Tarif_reduit, $Pass_jour_1, $Pass_jour_2, $Pass_jour_3, $Nombre_casque, $Nombre_luge, $Emplacement_tente, $Emplacement_camion)
+    private $_Tarif;
+    private $_NombrePlaces;
+    private $_NombreLugesEte;
+    private $_NombreCasquesEnfants;
+    private $_Prix_jour_van;
+    private $_Nombre_de_nuit_van;
+    private $_Prix_jour_tente;
+    private $_Nombre_de_nuit_tente;
+    private $_Email;
+    private $_Id;
+    /**
+     * [__construct description]
+     *
+     * @param   [int]  $Tarif                 [$Tarif description]
+     * @param   [int]  $NombrePlaces          [$NombrePlaces description]
+     * @param   [int]  $NombreLugesEte        [$NombreLugesEte description]
+     * @param   [int]  $NombreCasquesEnfants  [$NombreCasquesEnfants description]
+     * @param   [int]  $Prix_jour_van         [$Prix_jour_van description]
+     * @param   [int]  $Nombre_de_nuit_van    [$Nombre_de_nuit_van description]
+     * @param   [int]  $Prix_jour_tente       [$Prix_jour_tente description]
+     * @param   [int]  $Nombre_de_nuit_tente  [$Nombre_de_nuit_tente description]
+     * @param   [string]  $Email                 [$Email description]
+     * @param   int                            [ description]
+     * @param   string  $Id                    [$Id description]
+     *
+     * @return  [type]                         [return description]
+     */
+    public function __construct(int $Tarif, $NombrePlaces, $NombreLugesEte, $NombreCasquesEnfants, $Prix_jour_van, $Nombre_de_nuit_van, $Prix_jour_tente, $Nombre_de_nuit_tente, $Email, int|string $Id = "à créer")
     {
-        $this->setNombre_Reservation($Nombre_Reservation);
-        $this->setTarif_reduit($Tarif_reduit);
-        $this->setPass_jour_1($Pass_jour_1);
-        $this->setPass_jour_2($Pass_jour_2);
-        $this->setPass_jour_3($Pass_jour_3);
-        $this->setNombre_casque($Nombre_casque);
-        $this->setNombre_luge($Nombre_luge);
-        $this->setEmplacement_tente($Emplacement_tente);
-        $this->setEmplacement_camion($Emplacement_camion);
+        $this->setTarif($Tarif);
+        $this->setNombrePlaces($NombrePlaces);
+        $this->setNombreLugesEte($NombreLugesEte);
+        $this->setNombreCasquesEnfants($NombreCasquesEnfants);
+        $this->setPrix_jour_van($Prix_jour_van);
+        $this->setNombre_de_nuit_van($Nombre_de_nuit_van);
+        $this->setPrix_jour_tente($Prix_jour_tente);
+        $this->setNombre_de_nuit_tente($Nombre_de_nuit_tente);
+        $this->setEmail($Email);
+        $this->setId($Id);
+    }
+    function getTarif()
+    {
+        return $this->_Tarif;
+    }
+    function setTarif($Tarif)
+    {
+        return $this->_Tarif = $Tarif;
     }
 
-    function getNombre_Reservation()
+    function getNombrePlaces()
     {
-        return $this->_Nombre_Reservation;
+        return $this->_NombrePlaces;
     }
-    function setNombre_Reservation($Nombre_Reservation)
+    function setNombrePlaces($NombrePlaces)
     {
-        $this->_Nombre_Reservation = $Nombre_Reservation;
+        return $this->_NombrePlaces = $NombrePlaces;
     }
-    function getTarif_reduit()
+
+    function getNombreLugesEte()
     {
-        return $this->_Tarif_reduit;
+        return $this->_NombreLugesEte;
     }
-    function setTarif_reduit($Tarif_reduit)
+    function setNombreLugesEte($NombreLugesEte)
     {
-        $this->_Tarif_reduit = $Tarif_reduit;
+        return $this->_NombreLugesEte = $NombreLugesEte;
     }
-    function getPass_jour_1()
+
+    function getNombreCasquesEnfants()
     {
-        return $this->_Pass_jour_1;
+        return $this->_NombreCasquesEnfants;
     }
-    function setPass_jour_1($Pass_jour_1)
+    function setNombreCasquesEnfants($NombreCasquesEnfants)
     {
-        $this->_Pass_jour_1 = $Pass_jour_1;
+        return $this->_NombreCasquesEnfants = $NombreCasquesEnfants;
     }
-    function getPass_jour_2()
+
+    function getPrix_jour_van()
     {
-        return $this->_Pass_jour_2;
+        return $this->_Prix_jour_van;
     }
-    function setPass_jour_2($Pass_jour_2)
+    function setPrix_jour_van($Prix_jour_van)
     {
-        $this->_Pass_jour_2 = $Pass_jour_2;
+        return $this->_Prix_jour_van = $Prix_jour_van;
     }
-    function getPass_jour_3()
+
+    function getNombre_de_nuit_van()
     {
-        return $this->_Pass_jour_3;
+        return $this->_Nombre_de_nuit_van;
     }
-    function setPass_jour_3($Pass_jour_3)
+    function setNombre_de_nuit_van($Nombre_de_nuit_van)
     {
-        $this->_Pass_jour_3 = $Pass_jour_3;
+        return $this->_Nombre_de_nuit_van = $Nombre_de_nuit_van;
     }
-    function getNombre_casque()
+
+    function getPrix_jour_tente()
     {
-        return $this->_Nombre_casque;
+        return $this->_Prix_jour_tente;
     }
-    function setNombre_casque($Nombre_casque)
+    function setPrix_jour_tente($Prix_jour_tente)
     {
-        $this->_Nombre_casque = $Nombre_casque;
+        return $this->_Prix_jour_tente = $Prix_jour_tente;
     }
-    function getNombre_luge()
+
+    function getNombre_de_nuit_tente()
     {
-        return $this->_Nombre_luge;
+        return $this->_Nombre_de_nuit_tente;
     }
-    function setNombre_luge($Nombre_luge)
+    function setNombre_de_nuit_tente($Nombre_de_nuit_tente)
     {
-        $this->_Nombre_luge = $Nombre_luge;
+        return $this->_Nombre_de_nuit_tente = $Nombre_de_nuit_tente;
     }
-    function getEmplacement_tente()
+
+    function getEmail()
     {
-        return $this->_Emplacement_tente;
+        return $this->_Email;
     }
-    function setEmplacement_tente($Emplacement_tente)
+    function setEmail($Email)
     {
-        $this->_Emplacement_tente = $Emplacement_tente;
+        return $this->_Email = $Email;
     }
-    function getEmplacement_camion()
+
+    function getId()
     {
-        return $this->_Emplacement_camion;
+        return $this->_Id;
     }
-    function setEmplacement_camion($Emplacement_camion)
+
+    public function setId(int|string $Id): voId
     {
-        $this->_Emplacement_camion = $Emplacement_camion;
+        if (is_string($Id) && $Id == "à créer") {
+            $this->_Id = $this->Id_Reservation();
+        } else {
+            $this->_Id = $Id;
+        }
+    }
+    public function Id_Reservation()
+    {
+        $Database_reservation = new Database_reservation();
+        $Reservations = $Database_reservation->Toute_Les_Reservations();
+        $Ids = [];
+        foreach ($Reservations as $Reservations) {
+            $Ids[] = $Reservations->getId();
+        }
+        $i = 1;
+        $unique = false;
+        while ($unique === false) {
+            if (in_array($i, $Ids)) {
+                $i++;
+                $unique = false;
+            } else {
+                $unique = true;
+                break;
+            }
+        }
+        return $i;
+    }
+    function getObject_Recap(): array
+    {
+        return [
+            'Tarif_total' => $this->getTarif(),
+            'Nombre_de_place_choisi' => $this->getNombrePlaces(),
+            'Nombre_de_luge' => $this->getNombreLugesEte(),
+            'Nombre_de_casque' => $this->getNombreCasquesEnfants(),
+            'Prix_par_nuit_van' => $this->getPrix_jour_van(),
+            'Nombre_de_nuit_van' => $this->getNombre_de_nuit_van(),
+            'Prix_par_nuit_tente' => $this->getPrix_jour_tente(),
+            'Nombre_de_nuit_tente' => $this->getNombre_de_nuit_tente(),
+            'Email' => $this->getEmail(),
+            'id' => $this->getId()
+        ];
     }
 }
