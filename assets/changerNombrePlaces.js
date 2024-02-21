@@ -1,11 +1,11 @@
+// Ajout d'un addEventListener avec les boutons ajoutés sur le nombre de places à réserver (pour rendre le côté plus intuitif pour l'utilisateur).
+
 let btns = document.querySelectorAll(".btn");
 let NombrePlaces = document.getElementById("NombrePlaces");
 
-function changerNombrePlaces() {
+export default function changerNombrePlaces() {
   btns.forEach((btns) => {
     btns.addEventListener("click", function () {
-      
-
       event.preventDefault();
       if (btns.classList.contains("decrease")) {
         if (NombrePlaces.value == 0) {
@@ -20,7 +20,3 @@ function changerNombrePlaces() {
     return NombrePlaces.value;
   });
 }
-
-
-
-export default changerNombrePlaces;
