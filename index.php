@@ -14,7 +14,8 @@
         <fieldset id="reservation">
             <legend>Réservation</legend>
             <h3>Nombre de réservation(s) :</h3>
-            <input type="number" name="nombrePlaces" id="NombrePlaces" required>
+            <input type="number" name="nombrePlaces" id="NombrePlaces" value="" required>
+            <button class="btn decrease">-</button><button class="btn increase">+</button>
             <h3>Réservation(s) en tarif réduit</h3>
             <input type="checkbox" name="tarifReduit" id="tarifReduit">
             <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
@@ -39,9 +40,9 @@
             <!-- Si case cochée, afficher le choix des jours -->
             <section id="pass2joursDate">
                 <input type="checkbox" name="passSelection" id="choixJour12">
-                <label for="choixJour1">Pass pour deux journées du 01/07 au 02/07</label>
+                <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
                 <input type="checkbox" name="passSelection" id="choixJour23">
-                <label for="choixJour2">Pass pour deux journées du 02/07 au 03/07</label>
+                <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
             </section>
 
             <input type="checkbox" name="passSelection" id="pass3jours">
