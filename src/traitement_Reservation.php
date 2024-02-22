@@ -24,6 +24,74 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
         exit;
     }
 
+    //Prix des pass avec nombre de réservations.
+
+    if (isset($_POST['choixJour1']) && isset($_POST['choixJour2']) && isset($_POST['choixJour3']) && isset($_POST['choixJour12']) && isset($_POST['choixJour23']) && isset($_POST['pass3jours']) && isset($_POST['nombrePlaces']) && isset($_POST['tarifReduit']) && isset($_POST['pass1jourReduction']) && isset($_POST['pass2joursReduction']) && isset($_POST['pass3joursReduction'])) {
+        $choixJour1 = htmlspecialchars(strip_tags((bool)$_POST['choixJour1']));
+        $choixJour2 = htmlspecialchars(strip_tags((bool)$_POST['choixJour2']));
+        $choixJour3 = htmlspecialchars(strip_tags((bool)$_POST['choixJour3']));
+        $choixJour12 = htmlspecialchars(strip_tags((bool)$_POST['choixJour12']));
+        $choixJour23 = htmlspecialchars(strip_tags((bool)$_POST['choixJour23']));
+        $pass1jour = htmlspecialchars(strip_tags((bool)$_POST['pass1jour']));
+        $pass2jours = htmlspecialchars(strip_tags((bool)$_POST['pass2jours']));
+        $pass3jours = htmlspecialchars(strip_tags((bool)$_POST['pass3jours']));
+        $nombrePlaces = htmlspecialchars(strip_tags((int)$_POST['nombrePlaces']));
+        $tarifReduit = htmlspecialchars(strip_tags((bool)$_POST['tarifReduit']));
+        $pass1jourReduction = htmlspecialchars(strip_tags((bool)$_POST['pass1jourReduction']));
+        $pass2joursReduction = htmlspecialchars(strip_tags((bool)$_POST['pass2joursReduction']));
+        $pass3joursReduction = htmlspecialchars(strip_tags((bool)$_POST['pass3joursReduction']));
+        $totalPrixPass = 0;
+        var_dump($totalPrixPass = 100 * $nombrePlaces);
+        if ($pass3jours == true) {
+            $totalPrixPass = 100 * $nombrePlaces;
+        } else if ($tarifReduit == true && $pass3joursReduction == true) {
+            $totalPrixPass = 65 * $nombrePlaces;
+        }
+
+        if ($pass2jours == true) {
+            if ($choixJour12 == true) {
+                $totalPrixPass = 70 * $nombrePlaces;
+            }
+            if ($choixJour23 == true) {
+                $totalPrixPass = 70 * $nombrePlaces;
+            }
+        } else if ($tarifReduit == true && $pass2joursReduction == true) {
+            if ($choixJour12 == true) {
+                $totalPrixPass = 50 * $nombrePlaces;
+            }
+            if ($choixJour23 == true) {
+                $totalPrixPass = 50 * $nombrePlaces;
+            }
+        }
+
+        if ($pass1jour == true) {
+            if ($choixJour1 == true) {
+                $totalPrixPass = 40 * $nombrePlaces;
+            }
+            if ($choixJour2 == true) {
+                $totalPrixPass = 40 * $nombrePlaces;
+            }
+            if ($choixJour3 == true) {
+                $totalPrixPass = 40 * $nombrePlaces;
+            }
+        } else if ($tarifReduit == true && $pass1jourReduction == true) {
+            if ($choixJour1 == true) {
+                $totalPrixPass = 25 * $nombrePlaces;
+            }
+            if ($choixJour2 == true) {
+                $totalPrixPass = 25 * $nombrePlaces;
+            }
+            if ($choixJour3 == true) {
+                $totalPrixPass = 25 * $nombrePlaces;
+            }
+        }
+    }
+    // else {
+    //     header('location: ../index.php?erreur=' . ERREUR_CHAMP_VIDE);
+    // }
+
+
+
     //prix et nombre de nuit pour la tente 
     if (isset($_POST['tenteNuit1']) && isset($_POST['tenteNuit2']) && isset($_POST['tenteNuit3'])) {
         $vanNuit1 = htmlspecialchars(strip_tags((bool)$_POST['vanNuit1']));
@@ -105,6 +173,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
         $nombrePlaces = (int) $_POST['nombrePlaces'];
         $NombreLugesEte = (int) $_POST['NombreLugesEte'];
         $ckecktarif = (bool) isset($_POST['tarifReduit']);
+        $Prix_jour_tente = (int) isset($_POST['Prix_jour_tente']);
         if ($ckecktarif == false) {
             $tarif = (int) $nombrePlaces * (($NombreLugesEte * 5) + ($nombreCasquesEnfants * 2) + $Prix_jour_van + $Prix_jour_tente);
         } else {

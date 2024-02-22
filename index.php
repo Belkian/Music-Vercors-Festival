@@ -67,11 +67,11 @@ if (isset($_GET['erreur'])) {
 
                 <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
                 <input type="checkbox" name="pass1jourReduction" id="pass1jourReduction" hidden>
-                <label for="pass1jour" hidden>Pass 1 jour : 25€</label>
+                <label for="pass1jourReduction" hidden>Pass 1 jour : 25€</label>
                 <input type="checkbox" name="pass2joursReduction" id="pass2joursReduction" hidden>
-                <label for="pass2jours" hidden>Pass 2 jours : 50€</label>
+                <label for="pass2joursReduction" hidden>Pass 2 jours : 50€</label>
                 <input type="checkbox" name="pass3joursReduction" id="pass3joursReduction" hidden>
-                <label for="pass3jours" hidden>Pass 3 jours : 65€</label>
+                <label for="pass3joursReduction" hidden>Pass 3 jours : 65€</label>
 
                 <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
