@@ -13,8 +13,6 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
     $vanNuit3 = htmlspecialchars(strip_tags((bool)$_POST['vanNuit3']));
     $van3Nuit = htmlspecialchars(strip_tags((bool)$_POST['van3Nuit']));
 
-
-
     if (is_numeric($telephone)) {
         $telephone = $telephone;
     } else {
