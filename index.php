@@ -1,6 +1,9 @@
 <?php
 session_start();
 $Messages_Erreurs = [];
+if (isset($_GET['erreur'])) {
+    $Messages_Erreurs = (int) $_GET['erreur'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +21,9 @@ $Messages_Erreurs = [];
     <form action="./src/traitement_Reservation.php" id="inscription" method="POST">
         <fieldset id="reservation">
             <legend>Réservation</legend>
+            <?php if ($Messages_Erreurs === 2) { ?>
+                <div class="message echec">Veuillez remplir tous les champs.</div>
+            <?php } ?>
             <h3>Nombre de réservation(s) :</h3>
             <input type="number" name="nombrePlaces" id="NombrePlaces" required>
             <h3>Réservation(s) en tarif réduit</h3>
@@ -76,6 +82,9 @@ $Messages_Erreurs = [];
             <label for="tenteNuit3">Pour la nuit du 03/07 (5€)</label>
             <input type="checkbox" id="tente3Nuits" name="tente3Nuits">
             <label for="tente3Nuits">Pour les 3 nuits (12€)</label>
+            <?php if ($Messages_Erreurs === 2) { ?>
+                <div class="message echec">Veuillez remplir le champ.</div>
+            <?php } ?>
 
             <h3>Réserver un emplacement de camion aménagé : </h3>
             <input type="checkbox" class="van" id="vanNuit1" name="vanNuit1">
@@ -86,6 +95,9 @@ $Messages_Erreurs = [];
             <label for="vanNuit3">Pour la nuit du 03/07 (5€)</label>
             <input type="checkbox" class="van" id="van3Nuits" name="van3Nuits">
             <label for="van3Nuits">Pour les 3 nuits (12€)</label>
+            <?php if ($Messages_Erreurs === 2) { ?>
+                <div class="message echec">Veuillez remplir le champ.</div>
+            <?php } ?>
 
             <h3>Venez-vous avec des enfants ?</h3>
             <input type="checkbox" name="enfantsOui" id="enfantsOui"><label for="enfantsOui">Oui</label>
@@ -96,12 +108,18 @@ $Messages_Erreurs = [];
                 <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
                 <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
                 <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">
+                <?php if ($Messages_Erreurs === 2) { ?>
+                    <div class="message echec">Veuillez remplir le champ.</div>
+                <?php } ?>
                 <p>*Dans la limite des stocks disponibles.</p>
             </section>
 
             <h3>Profitez de descentes en luge d'été à tarifs avantageux ! (5€ / descente)</h3>
             <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
             <input type="number" name="NombreLugesEte" id="NombreLugesEte" min="0">
+            <?php if ($Messages_Erreurs === 2) { ?>
+                <div class="message echec">Veuillez remplir le champ.</div>
+            <?php } ?>
 
             <p class="bouton" onclick="suivant('coordonnees')">Suivant</p>
         </fieldset>
@@ -113,8 +131,14 @@ $Messages_Erreurs = [];
             <input type="text" name="prenom" id="prenom" required>
             <label for="email">Email :</label>
             <input type="email" name="email" id="email" required>
+            <?php if ($Messages_Erreurs === 1) { ?>
+                <div class="message echec">Votre email doit être au format email.</div>
+            <?php } ?>
             <label for="telephone">Téléphone :</label>
             <input type="text" name="telephone" id="telephone" required>
+            <?php if ($Messages_Erreurs === 8) { ?>
+                <div class="message echec">Veuillez remplir un numéro de téléphone valide.</div>
+            <?php } ?>
             <label for="adressePostale">Adresse Postale :</label>
             <input type="text" name="adressePostale" id="adressePostale" required>
 
