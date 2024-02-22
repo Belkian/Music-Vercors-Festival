@@ -19,18 +19,18 @@ final class Database_reservation
         $Reservations = [];
 
         while (($ligne = fgetcsv($fichier, 1000, ",")) !== false) {
-            $Reservations[] = new User($ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[0]);
+            $Reservations[] = new Reservation($ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[0]);
         }
         fclose($fichier);
         return $Reservations;
     }
 
-    public function findUserByEmail(string $email): User|bool
+    public function find_Reservation_By_Email(string $email): User|bool
     {
         $fichier = fopen($this->_DB, "r");
         while (($user = fgetcsv($fichier, 1000, ",")) !== false) {
             if ($user[3] === $email) {
-                $user = new User($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
+                $user = new Reservation($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
                 break;
             } else {
                 $user = false;
