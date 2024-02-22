@@ -17,7 +17,7 @@ if (isset($_GET['erreur'])) {
 </head>
 
 <body>
-    <?php readfile('./assets/header_user.php'); ?>
+    <?php readfile('./assets/header.php'); ?>
     <div id="main">
         <?php readfile('./assets/navigation.php'); ?>
 

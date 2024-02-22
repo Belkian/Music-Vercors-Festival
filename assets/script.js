@@ -10,9 +10,9 @@ checkTarifReduit();
 checkPass();
 checkOptions();
 
-import { checkTente, checkVan, checkEnfants } from "./Section-Options.js";
+// import { checkTente, checkVan, checkEnfants } from "./Section-Options.js";
 
-checkTente();
-checkVan();
-checkEnfants();
+// checkTente();
+// checkVan();
+// checkEnfants();
 
