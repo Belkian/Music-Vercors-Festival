@@ -15,6 +15,7 @@ $Messages_Erreurs = [];
 </head>
 
 <body>
+
     <?php readfile('./assets/header_user.php'); ?>
     <div id="main">
         <?php readfile('./assets/navigation_user.php'); ?>
@@ -127,6 +128,7 @@ $Messages_Erreurs = [];
             </fieldset>
         </form>
     </div>
+
 </body>
 
 </html>

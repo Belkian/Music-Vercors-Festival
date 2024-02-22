@@ -1,3 +1,24 @@
+
+.pass1jourDate {
+  display: none;
+}
+
+.pass1jourDateVisible {
+  display: block;
+  opacity: 1;
+  transition: opacity ease 1s;
+}
+
+.pass2joursDate {
+  display: none;
+}
+
+.pass2joursDateVisible {
+  display: block;
+  opacity: 1;
+  transition: opacity ease 1s;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -5,14 +26,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-#pass1jourDate {
-    visibility: hidden;
-}
-
-#pass2joursDate {
-    display: none;
 }
 
 #main {
@@ -110,3 +123,4 @@ input {
     width: 100%;
     text-align: center;
 }
+
