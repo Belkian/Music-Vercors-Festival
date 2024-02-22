@@ -30,7 +30,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
         exit;
     }
 
-    //prix et nombre de nuit pour le tente 
+    //prix et nombre de nuit pour la tente 
 
     $Prix_jour_tente = 0;
     $nombre_de_nuit_tente = 0;

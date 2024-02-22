@@ -1,6 +1,9 @@
 <?php
 session_start();
 $Messages_Erreurs = [];
+if (isset($_GET['erreur'])) {
+    $Messages_Erreurs = (int) $_GET['erreur'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +18,7 @@ $Messages_Erreurs = [];
 </head>
 
 <body>
+
 
     <?php readfile('./assets/header_user.php'); ?>
     <div id="main">
@@ -128,6 +132,7 @@ $Messages_Erreurs = [];
             </fieldset>
         </form>
     </div>
+
 
 </body>
 
