@@ -1,22 +1,21 @@
-
 .pass1jourDate {
-  display: none;
+    display: none;
 }
 
 .pass1jourDateVisible {
-  display: block;
-  opacity: 1;
-  transition: opacity ease 1s;
+    display: block;
+    opacity: 1;
+    transition: opacity ease 1s;
 }
 
 .pass2joursDate {
-  display: none;
+    display: none;
 }
 
 .pass2joursDateVisible {
-  display: block;
-  opacity: 1;
-  transition: opacity ease 1s;
+    display: block;
+    opacity: 1;
+    transition: opacity ease 1s;
 }
 
 body {
@@ -45,6 +44,21 @@ fieldset {
     margin: 2% 15%;
     padding: 5px 30px;
 }
+
+#reservation {
+    opacity: 75%;
+    transition: all ease-in-out 250ms;
+}
+
+#options,
+#coordonnees {
+    opacity: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+
+
+
 
 .header {
     height: 100px;
@@ -123,4 +137,3 @@ input {
     width: 100%;
     text-align: center;
 }
-

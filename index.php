@@ -75,7 +75,7 @@ if (isset($_GET['erreur'])) {
 
                 <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-                <p class="bouton" onclick="suivant('option')">Suivant</p>
+                <p class="bouton options" onclick="suivant('option')">Suivant</p>
             </fieldset>
             <fieldset id="options">
                 <legend>Options</legend>
@@ -127,8 +127,8 @@ if (isset($_GET['erreur'])) {
                     <div class="message echec">Veuillez remplir le champ.</div>
                 <?php } ?>
                 <div class="flex">
-                    <p class="bouton" onclick="suivant('reservation')">Précédent</p>
-                    <p class="bouton" onclick="suivant('coordonnees')">Suivant</p>
+                    <p class="bouton reservation" onclick="suivant('reservation')">Précédent</p>
+                    <p class="bouton coordonnees" onclick="suivant('coordonnees')">Suivant</p>
                 </div>
             </fieldset>
             <fieldset id="coordonnees">
@@ -150,6 +150,7 @@ if (isset($_GET['erreur'])) {
                 <label for="adressePostale">Adresse Postale :</label>
                 <input type="text" name="adressePostale" id="adressePostale" required><br>
 
+                <p class="bouton options" onclick="suivant('reservation')">Précédent</p>
                 <input type="submit" name="soumission" class="bouton" value="Réserver">
             </fieldset>
         </form>
