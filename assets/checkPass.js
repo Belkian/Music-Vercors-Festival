@@ -7,9 +7,11 @@ export default function checkPass() {
 
   pass1jour.addEventListener("change", () => {
     if (pass1jour.checked == true) {
-      pass1jourDate.style.visibility = "visible";
+      pass1jourDate.style.opacity = "1";
+      pass1jourDate.style.transition = "opacity ease 1s";
     } else {
-      pass1jourDate.style.visibility = "hidden";
+      pass1jourDate.style.opacity = "0";
+      pass1jourDate.style.transition = "opacity ease 1s";
     }
   });
 
@@ -33,22 +35,21 @@ export default function checkPass() {
         choixJour2.checked = false;
         choixJour3.checked = false;
         pass1jour.checked = false;
-        pass1jourDate.style.visibility = "hidden";
       }
-      if (choixJour3.checked == true){
+      if (choixJour3.checked == true) {
         pass1jour.checked = false;
         pass2jours.checked = false;
       }
     });
   });
 
- 
-
   pass2jours.addEventListener("change", () => {
     if (pass2jours.checked == true) {
-      pass2joursDate.style.visibility = "visible";
+      pass2joursDate.style.opacity = "1";
+      pass2joursDate.style.transition = "opacity ease 1s";
     } else {
-      pass2joursDate.style.visibility = "hidden";
+      pass2joursDate.style.opacity = "0";
+      pass2joursDate.style.transition = "opacity ease 1s";
     }
   });
 

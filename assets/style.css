@@ -1,7 +1,19 @@
-#pass1jourDate {
-    visibility: hidden;
+.pass1jourDate {
+  display: none;
 }
 
-#pass2joursDate {
-    visibility: hidden;
+.pass1jourDateVisible {
+  display: block;
+  opacity: 1;
+  transition: opacity ease 1s;
+}
+
+.pass2joursDate {
+  display: none;
+}
+
+.pass2joursDateVisible {
+  display: block;
+  opacity: 1;
+  transition: opacity ease 1s;
 }

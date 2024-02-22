@@ -21,31 +21,31 @@
             <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
             <h3>Choisissez votre formule :</h3>
-            <input type="checkbox" name="passSelection" id="pass1jour">
+            <input type="checkbox" name="pass1jour" id="pass1jour">
             <label for="pass1jour">Pass 1 jour : 40€</label>
 
             <!-- Si case cochée, afficher le choix du jour -->
-            <section id="pass1jourDate" style="visibility: hidden">
-                <input type="checkbox" name="passSelection" id="choixJour1" class="choixPass1Jour">
+            <section id="pass1jourDate" class="pass1jourDate">
+                <input type="checkbox" name="choixJour1" id="choixJour1" class="choixPass1Jour">
                 <label for="choixJour1">Pass pour la journée du 01/07</label>
-                <input type="checkbox" name="passSelection" id="choixJour2" class="choixPass1Jour">
+                <input type="checkbox" name="choixJour2" id="choixJour2" class="choixPass1Jour">
                 <label for="choixJour2">Pass pour la journée du 02/07</label>
-                <input type="checkbox" name="passSelection" id="choixJour3" class="choixPass1Jour">
+                <input type="checkbox" name="choixJour3" id="choixJour3" class="choixPass1Jour">
                 <label for="choixJour3">Pass pour la journée du 03/07</label>
             </section>
 
-            <input type="checkbox" name="passSelection" id="pass2jours">
+            <input type="checkbox" name="pass2jours" id="pass2jours">
             <label for="pass2jours">Pass 2 jours : 70€</label>
 
             <!-- Si case cochée, afficher le choix des jours -->
             <section id="pass2joursDate">
-                <input type="checkbox" name="passSelection" id="choixJour12" class="choixPass2Jours jour1et2">
+                <input type="radio" name="choixJour12" id="choixJour12" class="choixPass2Jours jour1et2">
                 <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
-                <input type="checkbox" name="passSelection" id="choixJour23" class="choixPass2Jours jour2et3">
+                <input type="radio" name="choixJour23" id="choixJour23" class="choixPass2Jours jour2et3">
                 <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
             </section>
 
-            <input type="checkbox" name="passSelection" id="pass3jours">
+            <input type="checkbox" name="pass3jours" id="pass3jours">
             <label for="pass3jours">Pass 3 jours : 100€</label>
 
 
