@@ -1,3 +1,4 @@
+
 import changerNombrePlaces from "./changerNombrePlaces.js";
 import checkTarifReduit from "./checkTarifReduit.js";
 import checkPass from "./checkPass.js";
@@ -8,3 +9,10 @@ changerNombrePlaces();
 checkTarifReduit();
 checkPass();
 checkOptions();
+
+import { checkTente, checkVan, checkEnfants } from "./Section-Options.js";
+
+checkTente();
+checkVan();
+checkEnfants();
+
