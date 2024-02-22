@@ -1,3 +1,4 @@
 <?php
+session_start();
 session_destroy();
-header('Localisation : connexion.php');
+header('location:connexion.php');
