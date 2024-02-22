@@ -7,11 +7,11 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
     $prenom = htmlspecialchars(strip_tags($_POST['prenom']));
     $adressePostale = htmlspecialchars(strip_tags($_POST['adressePostale']));
     $telephone = htmlspecialchars(strip_tags($_POST['telephone']));
-    $enfantsOui = htmlspecialchars(strip_tags($_POST['enfantsOui']));
-    $vanNuit1 = htmlspecialchars(strip_tags($_POST['vanNuit1']));
-    $vanNuit2 = htmlspecialchars(strip_tags($_POST['vanNuit2']));
-    $vanNuit3 = htmlspecialchars(strip_tags($_POST['vanNuit3']));
-    $van3Nuit = htmlspecialchars(strip_tags($_POST['van3Nuit']));
+    $enfantsOui = htmlspecialchars(strip_tags((bool)$_POST['enfantsOui']));
+    $vanNuit1 = htmlspecialchars(strip_tags((bool)$_POST['vanNuit1']));
+    $vanNuit2 = htmlspecialchars(strip_tags((bool)$_POST['vanNuit2']));
+    $vanNuit3 = htmlspecialchars(strip_tags((bool)$_POST['vanNuit3']));
+    $van3Nuit = htmlspecialchars(strip_tags((bool)$_POST['van3Nuit']));
 
 
 

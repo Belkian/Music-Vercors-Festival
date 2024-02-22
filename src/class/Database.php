@@ -6,6 +6,7 @@ final class Database
     {
         $this->_DB = __DIR__ . "/../csv/user.csv";
     }
+    
     public function saveUtilisateur(User $User): bool
     {
         $fichier = fopen($this->_DB, "ab");
@@ -13,6 +14,7 @@ final class Database
         fclose($fichier);
         return $retour;
     }
+
     public function ToutLesUtilisateurs(): array
     {
         $fichier = fopen($this->_DB, "r");

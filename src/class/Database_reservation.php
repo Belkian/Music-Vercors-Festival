@@ -19,7 +19,7 @@ final class Database_reservation
         $Reservations = [];
 
         while (($ligne = fgetcsv($fichier, 1000, ",")) !== false) {
-            $Reservations[] = new Reservation($ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[0]);
+            $Reservations[] = new Reservation($ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9], $ligne[1], $ligne[0]);
         }
         fclose($fichier);
         return $Reservations;
@@ -29,8 +29,8 @@ final class Database_reservation
     {
         $fichier = fopen($this->_DB, "r");
         while (($user = fgetcsv($fichier, 1000, ",")) !== false) {
-            if ($user[3] === $email) {
-                $user = new Reservation($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
+            if ($user[1] === $email) {
+                $user = new Reservation($user[2], $user[3], $user[4], $user[5], $user[6], $user[7], $user[8], $user[9], $user[1], $user[0]);
                 break;
             } else {
                 $user = false;
