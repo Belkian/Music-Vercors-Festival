@@ -37,8 +37,13 @@ if (isset($_GET['erreur'])) {
                 <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
 
                 <h3>Choisissez votre formule :</h3>
-                <input type="checkbox" name="pass1jour" id="pass1jour">
-                <label for="pass1jour">Pass 1 jour : 40€</label>
+                <section class="sectionInputs">
+                    <input type="checkbox" name="pass1jour" id="pass1jour" class="pass1jour">
+                    <label for="pass1jour" class="pass1jour">Pass 1 jour : 40€</label>
+                    <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
+                    <input type="checkbox" name="pass1jourReduction" id="pass1jourReduction" class="pass1jourReduction blocPassInvisible">
+                    <label for="pass1jourReduction" class="pass1jourReduction blocPassInvisible">Pass 1 jour : 25€</label>
+                </section>
 
                 <!-- Si case cochée, afficher le choix du jour -->
                 <section id="pass1jourDate" class="blocPassInvisible">
@@ -50,8 +55,13 @@ if (isset($_GET['erreur'])) {
                     <label for="choixJour3">Pass pour la journée du 03/07</label>
                 </section>
 
-                <input type="checkbox" name="pass2jours" id="pass2jours">
-                <label for="pass2jours">Pass 2 jours : 70€</label>
+                <section class="sectionInputs">
+                    <input type="checkbox" name="pass2jours" id="pass2jours" class="pass2jours">
+                    <label for="pass2jours" class="pass2jours">Pass 2 jours : 70€</label>
+                    <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
+                    <input type="checkbox" name="pass2joursReduction" id="pass2joursReduction" class="pass2joursReduction blocPassInvisible">
+                    <label for="pass2joursReduction" class="pass2joursReduction blocPassInvisible">Pass 2 jours : 50€</label>
+                </section>
 
                 <!-- Si case cochée, afficher le choix des jours -->
                 <section id="pass2joursDate" class="blocPassInvisible">
@@ -61,17 +71,13 @@ if (isset($_GET['erreur'])) {
                     <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
                 </section>
 
-                <input type="checkbox" name="pass3jours" id="pass3jours">
-                <label for="pass3jours">Pass 3 jours : 100€</label>
-
-
-                <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
-                <input type="checkbox" name="pass1jourReduction" id="pass1jourReduction" >
-                <label for="pass1jourReduction" >Pass 1 jour : 25€</label>
-                <input type="checkbox" name="pass2joursReduction" id="pass2joursReduction" >
-                <label for="pass2joursReduction" >Pass 2 jours : 50€</label>
-                <input type="checkbox" name="pass3joursReduction" id="pass3joursReduction" >
-                <label for="pass3joursReduction" >Pass 3 jours : 65€</label>
+                <section class="sectionInputs">
+                    <input type="checkbox" name="pass3jours" id="pass3jours" class="pass3jours">
+                    <label for="pass3jours" class="pass3jours">Pass 3 jours : 100€</label>
+                    <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
+                    <input type="checkbox" name="pass3joursReduction" id="pass3joursReduction" class="pass3joursReduction blocPassInvisible">
+                    <label for="pass3joursReduction" class="pass3joursReduction blocPassInvisible">Pass 3 jours : 65€</label>
+                </section>
 
                 <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 

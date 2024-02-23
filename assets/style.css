@@ -1,3 +1,5 @@
+/* ------ Class pour addEventListeners ------ */
+
 .blocPassInvisible {
     display: none;
     opacity: 0;
@@ -5,10 +7,13 @@
 }
 
 .blocPassVisible {
-    display: block;
+    display: inline;
+    flex-direction: column;
     opacity: 1;
     transition: opacity ease 1s;
 }
+
+/* ------ BODY ------ */
 
 body {
     margin: 0;
