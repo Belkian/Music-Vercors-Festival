@@ -41,7 +41,7 @@ if (isset($_GET['erreur'])) {
                 <label for="pass1jour">Pass 1 jour : 40€</label>
 
                 <!-- Si case cochée, afficher le choix du jour -->
-                <section id="pass1jourDate" class="pass1jourDate">
+                <section id="pass1jourDate" class="blocPassInvisible">
                     <input type="checkbox" name="choixJour1" id="choixJour1" class="choixPass1Jour">
                     <label for="choixJour1">Pass pour la journée du 01/07</label>
                     <input type="checkbox" name="choixJour2" id="choixJour2" class="choixPass1Jour">
@@ -54,10 +54,10 @@ if (isset($_GET['erreur'])) {
                 <label for="pass2jours">Pass 2 jours : 70€</label>
 
                 <!-- Si case cochée, afficher le choix des jours -->
-                <section id="pass2joursDate">
-                    <input type="radio" name="choixJour12" id="choixJour12" class="choixPass2Jours jour1et2">
+                <section id="pass2joursDate" class="blocPassInvisible">
+                    <input type="checkbox" name="choixJour12" id="choixJour12" class="choixPass2Jours">
                     <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
-                    <input type="radio" name="choixJour23" id="choixJour23" class="choixPass2Jours jour2et3">
+                    <input type="checkbox" name="choixJour23" id="choixJour23" class="choixPass2Jours">
                     <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
                 </section>
 
@@ -66,16 +66,16 @@ if (isset($_GET['erreur'])) {
 
 
                 <!-- tarifs réduits : à n'afficher que si tarif réduit est sélectionné -->
-                <input type="checkbox" name="pass1jourReduction" id="pass1jourReduction" hidden>
-                <label for="pass1jour" hidden>Pass 1 jour : 25€</label>
-                <input type="checkbox" name="pass2joursReduction" id="pass2joursReduction" hidden>
-                <label for="pass2jours" hidden>Pass 2 jours : 50€</label>
-                <input type="checkbox" name="pass3joursReduction" id="pass3joursReduction" hidden>
-                <label for="pass3jours" hidden>Pass 3 jours : 65€</label>
+                <input type="checkbox" name="pass1jourReduction" id="pass1jourReduction" >
+                <label for="pass1jourReduction" >Pass 1 jour : 25€</label>
+                <input type="checkbox" name="pass2joursReduction" id="pass2joursReduction" >
+                <label for="pass2joursReduction" >Pass 2 jours : 50€</label>
+                <input type="checkbox" name="pass3joursReduction" id="pass3joursReduction" >
+                <label for="pass3joursReduction" >Pass 3 jours : 65€</label>
 
                 <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-                <p class="bouton" onclick="suivant('option')">Suivant</p>
+                <p class="bouton options" onclick="suivant('option')">Suivant</p>
             </fieldset>
             <fieldset id="options">
                 <legend>Options</legend>
@@ -127,8 +127,8 @@ if (isset($_GET['erreur'])) {
                     <div class="message echec">Veuillez remplir le champ.</div>
                 <?php } ?>
                 <div class="flex">
-                    <p class="bouton" onclick="suivant('reservation')">Précédent</p>
-                    <p class="bouton" onclick="suivant('coordonnees')">Suivant</p>
+                    <p class="bouton reservation" onclick="suivant('reservation')">Précédent</p>
+                    <p class="bouton coordonnees" onclick="suivant('coordonnees')">Suivant</p>
                 </div>
             </fieldset>
             <fieldset id="coordonnees">
@@ -150,6 +150,7 @@ if (isset($_GET['erreur'])) {
                 <label for="adressePostale">Adresse Postale :</label>
                 <input type="text" name="adressePostale" id="adressePostale" required><br>
 
+                <p class="bouton options" onclick="suivant('reservation')">Précédent</p>
                 <input type="submit" name="soumission" class="bouton" value="Réserver">
             </fieldset>
         </form>
