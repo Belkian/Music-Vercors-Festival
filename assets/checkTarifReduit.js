@@ -8,8 +8,8 @@ export default function checkTarifReduit() {
       console.log(reduction.checked);
       return reduction.checked;
     } else {
-        console.log(reduction.checked);
-        return reduction.checked;
+      console.log(reduction.checked);
+      return reduction.checked;
     }
   });
 }

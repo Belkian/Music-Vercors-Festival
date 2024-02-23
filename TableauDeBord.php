@@ -1,10 +1,23 @@
 <?php
 session_start();
+require './src/config.php';
+require 'src/class/User.php';
+require 'src/class/Database_Reservation.php';
+require 'src/class/Reservation.php';
 $code_erreur = null;
 if (isset($_GET['erreur'])) {
     $code_erreur = (int) $_GET['erreur'];
 }
+
+if (!isset($_SESSION['connecté']) && empty($_SESSION['user'])) {
+    // abort
+    header('location: connexion.php');
+    die;
+}
+$user = unserialize($_SESSION['user']);
+$email = $user->getMail();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +25,21 @@ if (isset($_GET['erreur'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Document</title>
+    <title>Tableau de bord</title>
 </head>
 
 <body>
-    <?php readfile('./assets/header_user.php'); ?>
+    <?php include './assets/header_user.php'; ?>
 
     <div id="main">
-        <?php readfile('./assets/navigation_user.php'); ?>
-        <?php readfile('./reservation.php'); ?>
+        <?php include './assets/navigation_user.php'; ?>
+        <div>
+            <?php
+            $database_reservation = new Database_reservation();
+            var_dump($database_reservation->find_Reservation_By_Email($email));
+            ?>
+        </div>
+    </div>
 </body>
 
 </html>
