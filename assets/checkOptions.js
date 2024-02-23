@@ -48,19 +48,19 @@ export default function checkOptions() {
     }
   });
 
-  let choixPass2Jours = document.querySelectorAll('input[name="choixPass2"]');
-  let jour1et2 = document.querySelector("#choixJour12");
-  let jour2et3 = document.querySelector("#choixJour23");
-  choixPass2Jours.forEach((choixPass2Jours) => {
-    choixPass2Jours.addEventListener("change", () => {
-      if (jour1et2.checked == true) {
-        jour1et2.checked = true;
-        jour2et3.checked = false;
-      }
-      else if (jour2et3.checked == true) {
-        jour2et3.checked = true;
-        jour1et2.checked = false;
-      }
-    });
-  });
+  // let choixPass2Jours = document.querySelectorAll('input[name="choixPass2"]');
+  // let jour1et2 = document.querySelector("#choixJour12");
+  // let jour2et3 = document.querySelector("#choixJour23");
+  // choixPass2Jours.forEach((choixPass2Jours) => {
+  //   choixPass2Jours.addEventListener("change", () => {
+  //     if (jour1et2.checked == true) {
+  //       jour1et2.checked = true;
+  //       jour2et3.checked = false;
+  //     }
+  //     else if (jour2et3.checked == true) {
+  //       jour2et3.checked = true;
+  //       jour1et2.checked = false;
+  //     }
+  //   });
+  // });
 }

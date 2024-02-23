@@ -55,9 +55,9 @@ if (isset($_GET['erreur'])) {
 
                 <!-- Si case cochée, afficher le choix des jours -->
                 <section id="pass2joursDate" class="blocPassInvisible">
-                    <input type="checkbox" name="choixPass2" id="choixJour12" class="choixPass2Jours">
+                    <input type="checkbox" name="choixJour12" id="choixJour12" class="choixPass2Jours">
                     <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
-                    <input type="checkbox" name="choixPass2" id="choixJour23" class="choixPass2Jours">
+                    <input type="checkbox" name="choixJour23" id="choixJour23" class="choixPass2Jours">
                     <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
                 </section>
 
