@@ -193,7 +193,6 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
         } else {
             $totalPrixPass += (int) ($nombrePlaces * (($NombreLugesEte * 5) + $Prix_jour_tente)) + ($nombreCasquesEnfants * 2) + $Prix_jour_van;
         }
-        var_dump($totalPrixPass);
     }
     // action finale
     $Data_base = new Database_reservation();
