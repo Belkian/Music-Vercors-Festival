@@ -4,8 +4,8 @@ class User
     private $_id;
     private $_Nom;
     private $_Prenom;
-    private $_password;
     private $_Mail;
+    private $_password;
     // #
     private $_logged;
     /**
@@ -22,6 +22,7 @@ class User
      *
      * @return  [type]             [return description]
      */
+
     public function __construct(string $Nom, string $Prenom, string $Mail, string $password, int|string $id = "à créer", bool $logged = false)
     {
         $this->setId($id);

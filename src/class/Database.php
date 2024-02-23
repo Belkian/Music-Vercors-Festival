@@ -40,8 +40,6 @@ final class Database
         return $user;
     }
 
-
-
     public function findUserById(int $id): User|bool
     {
         $fichier = fopen($this->_DB, "r");

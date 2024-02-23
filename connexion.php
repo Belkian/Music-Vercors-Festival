@@ -1,9 +1,12 @@
 <?php
 session_start();
+require 'src/class/User.php';
+
 $code_erreur = null;
 if (isset($_GET['erreur'])) {
     $code_erreur = (int) $_GET['erreur'];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +15,7 @@ if (isset($_GET['erreur'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Document</title>
+    <title>Connexion</title>
 </head>
 
 <body>
@@ -20,23 +23,19 @@ if (isset($_GET['erreur'])) {
 
     <div id="main">
         <?php readfile('./assets/navigation.php'); ?>
-        <form action="src/traitement_User.php" method="post" onsubmit="return Validation()">
+        <form action="src/authentication.php" method="post" onsubmit="return Validation()">
             <fieldset>
                 <h1>Connexion</h1>
-                <label for="mail">Mail :</label>
-                <input type="email" id="mail" name="mail" required>
+                <label for="email">Mail :</label>
+                <input type="email" id="email" name="email" required>
                 <?php
-                if ($code_erreur === 1) {
-                ?>
-                    <p class='error'>Le mail n'est pas valide."</p>
+                if ($code_erreur === 7) {
+                ?><p class='error'>Erreur d'identification</p>
                 <?php } ?>
 
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="password" required>
-                <?php if ($code_erreur === 7) { ?>
-                    <p class='message error'>Mauvais password</p>
-                <?php } ?>
-                <input type="submit" name="submit" value="Se connecter">
+                <input class="bouton" type="submit" name="submit" value="Se connecter">
             </fieldset>
         </form>
     </div>

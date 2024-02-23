@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
+    // abort
+    header('location:tableauDeBord.php');
+    die;
+}
 $code_erreur = null;
 if (isset($_GET['erreur'])) {
     $code_erreur = (int) $_GET['erreur'];
@@ -21,7 +27,7 @@ if (isset($_GET['erreur'])) {
     <div id="main">
         <?php readfile('./assets/navigation.php'); ?>
 
-        <form action="/src/traitement.php" method="post" onsubmit="return Validation()">
+        <form action="/src/traitement_User.php" method="post" onsubmit="return Validation()">
             <fieldset>
                 <h1>Formulaire d'inscription</h1>
 
@@ -53,8 +59,6 @@ if (isset($_GET['erreur'])) {
                 <?php } ?>
                 <input class="bouton" type="submit" name="submit" value="S'inscrire">
             </fieldset>
-        </form>
-        <form action="/src/traitement.php" method="post" onsubmit="return Validation()">
         </form>
     </div>
 </body>

@@ -33,6 +33,7 @@ bouton.forEach((bouton) => {
         if (bouton.classList.contains("options")) {
             document.querySelector('#reservation').style.opacity = 0 + '%';
             setTimeout(() => { document.querySelector('#reservation').style.display = 'none' }, 250);
+            document.querySelector('#reservation').style.display = 'block';
             document.querySelector('#options').style.display = 'block';
             setTimeout(() => { document.querySelector('#options').style.opacity = 75 + '%' }, 250);
             document.querySelector('#coordonnees').style.display = 'none';
@@ -41,9 +42,9 @@ bouton.forEach((bouton) => {
         if (bouton.classList.contains("coordonnees")) {
             document.querySelector('#options').style.opacity = 0 + '%';
             setTimeout(() => { document.querySelector('#options').style.display = 'none' }, 250);
+            document.querySelector('#options').style.display = 'none';
             document.querySelector('#coordonnees').style.display = 'block';
             setTimeout(() => { document.querySelector('#coordonnees').style.opacity = 75 + '%' }, 250);
-            document.querySelector('#options').style.display = 'none';
             document.querySelector('#reservation').style.display = 'none';
 
         }
