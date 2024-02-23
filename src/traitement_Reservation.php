@@ -13,7 +13,8 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
     if (is_numeric($telephone)) {
         $telephone = $telephone;
     } else {
-        header('localisation : /../index.php?erreur=' . ERREUR_TELEPHONE);
+        header('location : /../index.php?erreur=' . ERREUR_TELEPHONE);
+        exit;
     }
 
     // email verificiation et nettoyage des caractère spéciaux

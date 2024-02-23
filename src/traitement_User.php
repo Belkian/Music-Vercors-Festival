@@ -19,7 +19,6 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
         exit;
     }
 
-
     if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
         $Mail = htmlentities($_POST['mail']);
     } else {
@@ -28,12 +27,14 @@ if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['mail']) 
     }
     // action finale
     $Data_base = new Database();
-    $User = new User($Nom, $Prenom, $password, $Mail);
+    $User = new User($Nom, $Prenom, $Mail, $password);
 
     if (($Data_base->saveUtilisateur($User)) == true) {
         header('location: /../connexion.php');
+        die;
     } else {
         header('location: /../index.php?message=' . ERREUR_ENREGISTREMENT);
+        die;
     }
 } else {
     header('location: /../index.php?message=' . ERREUR_CHAMP_VIDE);
