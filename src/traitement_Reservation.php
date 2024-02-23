@@ -169,6 +169,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
             $vanNuit2 = false;
             $vanNuit3 = false;
             $Prix_jour_van = 12;
+            $nombre_de_nuit_van = 3;
         }
     }
     $nombreCasquesEnfants = 0;
