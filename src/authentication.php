@@ -22,5 +22,5 @@ if (!empty($_POST['email']) && !empty($_POST['password']) && isset($_POST['email
         }
     }
 }
-header('location : ../connexion.php?erreur=' . 7);
+header('location: ../connexion.php?erreur=' . 7);
 die;
