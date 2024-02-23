@@ -1,18 +1,10 @@
-.pass1jourDate {
+.blocPassInvisible {
     display: none;
-}
-
-.pass1jourDateVisible {
-    display: block;
-    opacity: 1;
+    opacity: 0;
     transition: opacity ease 1s;
 }
 
-.pass2joursDate {
-    display: none;
-}
-
-.pass2joursDateVisible {
+.blocPassVisible {
     display: block;
     opacity: 1;
     transition: opacity ease 1s;
