@@ -1,15 +1,15 @@
-import changerNombrePlaces from "./changerNombrePlaces.js";
+import changerNombreFormulaire from "./changerNombreFormulaire.js";
 import checkTarifReduit from "./checkTarifReduit.js";
 import checkOptions from "./checkReservation.js";
-import changerNombreLuges from "./changerNombreLuges.js";
-import changerNombreCasques from "./changerNombreCasques.js";
+// import changerNombreLuges from "./changerNombreLuges.js";
+// import changerNombreCasques from "./changerNombreCasques.js";
 import { checkTente, checkVan, checkEnfants } from "./Section-Options.js";
 
-changerNombrePlaces();
+changerNombreFormulaire();
 checkTarifReduit();
 checkOptions();
-changerNombreLuges();
-changerNombreCasques();
+// changerNombreLuges();
+// changerNombreCasques();
 checkTente();
 checkVan();
 checkEnfants();
