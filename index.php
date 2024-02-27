@@ -23,7 +23,7 @@ if (isset($_GET['erreur'])) {
     <?php readfile('./assets/header_user.php'); ?>
     <div id="main">
         <?php readfile('./assets/navigation_user.php'); ?>
-        <form action="./src/traitement_Reservation.php" id="inscription" method="POST">
+        <form action="./src/traitement_Reservation.php" id="inscription" method="post">
             <fieldset id="reservation">
                 <legend>Réservation</legend>
                 <?php if ($Messages_Erreurs === 2) { ?>

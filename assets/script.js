@@ -21,7 +21,7 @@ document.querySelector("#reservation").style.display = "block";
 
 bouton.forEach((bouton) => {
   bouton.addEventListener("click", function () {
-    event.preventDefault();
+    // event.preventDefault();
     if (bouton.classList.contains("reservation")) {
       document.querySelector("#options").style.opacity = 0 + "%";
       setTimeout(() => {

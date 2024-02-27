@@ -6,7 +6,6 @@ let NombrePlaces = document.getElementById("NombrePlaces");
 export default function changerNombreFormulaire() {
   btns.forEach((btns) => {
     btns.addEventListener("click", function () {
-      event.preventDefault();
       if (btns.classList.contains("decrease")) {
         if (NombrePlaces.value == 0) {
           NombrePlaces.value == 0;
@@ -24,7 +23,6 @@ export default function changerNombreFormulaire() {
   let nombreCasquesEnfants = document.getElementById("nombreCasquesEnfants");
   btnEnfants.forEach((btnEnfants) => {
     btnEnfants.addEventListener("click", function () {
-      event.preventDefault();
       if (btnEnfants.classList.contains("decreaseKids")) {
         if (nombreCasquesEnfants.value == 0) {
           nombreCasquesEnfants.value == 0;
@@ -42,7 +40,6 @@ export default function changerNombreFormulaire() {
   let NombreLugesEte = document.getElementById("NombreLugesEte");
   btnLuges.forEach((btnLuges) => {
     btnLuges.addEventListener("click", function () {
-      event.preventDefault();
       if (btnLuges.classList.contains("decreaseLuges")) {
         if (NombreLugesEte.value == 0) {
           NombreLugesEte.value == 0;

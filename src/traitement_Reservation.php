@@ -14,7 +14,6 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
         $telephone = $telephone;
     } else {
         header('location : /../index.php?erreur=' . ERREUR_TELEPHONE);
-        exit;
     }
 
     // email verificiation et nettoyage des caractère spéciaux

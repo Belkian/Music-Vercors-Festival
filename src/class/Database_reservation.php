@@ -40,20 +40,18 @@ final class Database_reservation
         return $user;
     }
 
-
-
-    // public function findUserById(int $id): User|bool
-    // {
-    //     $fichier = fopen($this->_DB, "r");
-    //     while (($user = fgetcsv($fichier, 500, ",")) !== false) {
-    //         if ($user[0] === $id) {
-    //             $user = new User($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
-    //             break;
-    //         } else {
-    //             $user = false;
-    //         }
-    //     }
-    //     fclose($fichier);
-    //     return $user;
-    // }
+    public function findUserById(int $id): User|bool
+    {
+        $fichier = fopen($this->_DB, "r");
+        while (($user = fgetcsv($fichier, 500, ",")) !== false) {
+            if ($user[0] === $id) {
+                $user = new User($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
+                break;
+            } else {
+                $user = false;
+            }
+        }
+        fclose($fichier);
+        return $user;
+    }
 }
