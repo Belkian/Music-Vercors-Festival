@@ -116,7 +116,7 @@ if (isset($_GET['erreur'])) {
                 <input type="checkbox" name="enfantsNon" id="enfantsNon"><label for="enfantsNon">Non</label>
 
                 <!-- Si oui, afficher : -->
-                <section>
+                <section class="casquesEnfants blocPassInvisible">
                     <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
                     <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
                     <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">
