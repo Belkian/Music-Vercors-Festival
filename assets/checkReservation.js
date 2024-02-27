@@ -4,7 +4,6 @@ export default function checkOptions() {
     "#pass1jour, #pass1jourReduction"
   );
   let pass1jourDate = document.querySelector("#pass1jourDate");
-  console.log(pass1jour);
   pass1jourChoix.forEach((pass1jourChoix) => {
     pass1jourChoix.addEventListener("change", () => {
       if (pass1jourChoix.checked == true) {
@@ -50,7 +49,7 @@ export default function checkOptions() {
   // Si l'utilisateur séléctionne les 3 jours 1 en reduction, cela lui sélectionne directement le pass 3 jours réduction (et enlève les 3 pass 1 jour).
   let pass2joursReduc = document.getElementById("pass2joursReduction");
   let pass1jourReduc = document.getElementById("pass1jourReduction");
-  let Pass3joursReduc = document.getElementById("pass3joursReduction");
+  let pass3joursReduc = document.getElementById("pass3joursReduction");
   let tarifReduit = document.getElementById("tarifReduit");
   choixPass1Jour.forEach((choixPass1Jour) => {
     choixPass1Jour.addEventListener("change", () => {
@@ -69,7 +68,7 @@ export default function checkOptions() {
         pass2jours.checked = false;
         pass2joursReduc.checked = false;
         pass1jourReduc.checked = false;
-        Pass3joursReduc.checked = true;
+        pass3joursReduc.checked = true;
       }
     });
   });
@@ -144,17 +143,16 @@ export default function checkOptions() {
   });
 
   // Affichage de la section des casques enfants lorsque l'utilisateur clique sur "Oui".
-
   let checkEnfants = document.querySelector("#enfantsOui");
   let sectionEnfants = document.querySelector(".casquesEnfants");
 
   checkEnfants.addEventListener("click", () => {
-    if (checkEnfants.checked == true){
+    if (checkEnfants.checked == true) {
       sectionEnfants.classList.add("blocPassVisible");
       sectionEnfants.classList.remove("blocPassInvisible");
     } else {
       sectionEnfants.classList.remove("blocPassVisible");
       sectionEnfants.classList.add("blocPassInvisible");
     }
-  })
+  });
 }

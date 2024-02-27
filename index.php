@@ -30,7 +30,7 @@ if (isset($_GET['erreur'])) {
                     <div class="message echec">Veuillez remplir tous les champs.</div>
                 <?php } ?>
                 <h3>Nombre de réservation(s) :</h3>
-                <input type="number" name="nombrePlaces" id="NombrePlaces" value="" required>
+                <input type="number" name="nombrePlaces" id="NombrePlaces" value="0" required>
                 <button class="btn decrease">-</button><button class="btn increase">+</button>
                 <h3>Réservation(s) en tarif réduit</h3>
                 <input type="checkbox" name="tarifReduit" id="tarifReduit">
@@ -119,7 +119,8 @@ if (isset($_GET['erreur'])) {
                 <section class="casquesEnfants blocPassInvisible">
                     <h4>Voulez-vous louer un casque antibruit pour enfants* (2€ / casque) ?</h4>
                     <label for="nombreCasquesEnfants">Nombre de casques souhaités :</label>
-                    <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants">
+                    <input type="number" name="nombreCasquesEnfants" id="nombreCasquesEnfants" value="0">
+                    <button class="btnEnfants decreaseKids">-</button><button class="btnEnfants increaseKids">+</button>
                     <?php if ($Messages_Erreurs === 2) { ?>
                         <div class="message echec">Veuillez remplir le champ.</div>
                     <?php } ?>
@@ -128,7 +129,8 @@ if (isset($_GET['erreur'])) {
 
                 <h3>Profitez de descentes en luge d'été à tarifs avantageux ! (5€ / descente)</h3>
                 <label for="NombreLugesEte">Nombre de descentes en luge d'été :</label>
-                <input type="number" name="NombreLugesEte" id="NombreLugesEte" min="0">
+                <input type="number" name="NombreLugesEte" id="NombreLugesEte" min="0" value="0">
+                <button class="btnLuges decreaseLuges">-</button><button class="btnLuges increaseLuges">+</button>
                 <?php if ($Messages_Erreurs === 2) { ?>
                     <div class="message echec">Veuillez remplir le champ.</div>
                 <?php } ?>

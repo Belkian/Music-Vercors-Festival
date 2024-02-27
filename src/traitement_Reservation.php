@@ -204,9 +204,6 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
     } else {
         header('location: /../index.php?message=' . ERREUR_ENREGISTREMENT);
     }
-    //     else {
-    //         header('location: /../index.php?message=' . ERREUR_CHAMP_VIDE);
-    //     }
-    // } else {
-    //     header('location: /../index.php?erreur=' . ERREUR_CHAMP_VIDE);
+} else {
+    header('location: /../index.php?erreur=' . ERREUR_CHAMP_VIDE);
 }

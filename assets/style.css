@@ -1,136 +1,140 @@
 /* ------ Class pour addEventListeners ------ */
 
 .blocPassInvisible {
-    display: none;
-    opacity: 0;
-    transition: opacity ease 1s;
+  display: none;
+  opacity: 0;
+  transition: opacity ease 1s;
 }
 
 .blocPassVisible {
-    display: inline;
-    flex-direction: column;
-    opacity: 1;
-    transition: opacity ease 1s;
+  display: inline;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity ease 1s;
 }
 
 /* ------ BODY ------ */
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(./images/orfea.jpg);
+  background-size: cover;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #main {
-    display: flex;
+  display: flex;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 form {
-    background-image: url(./images/orfea.jpg);
-    background-size: cover;
-    width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 fieldset {
-    background-color: rgb(201, 198, 198);
-    opacity: 75%;
-    width: 70%;
-    margin: 2% 15%;
-    padding: 5px 30px;
+  background-color: rgb(201, 198, 198);
+  opacity: 75%;
+  width: 70%;
+  margin: 5% 15%;
+  padding: 10px 30px;
 }
 
 #reservation {
-    opacity: 75%;
-    transition: all ease-in-out 250ms;
+  opacity: 75%;
+  transition: all ease-in-out 250ms;
 }
 
 #options,
 #coordonnees {
-    opacity: 0%;
-    transition: all ease-in-out 250ms;
+  opacity: 0%;
+  transition: all ease-in-out 250ms;
 }
 
-
-
-
-
 .header {
-    height: 100px;
-    background-color: lightseagreen;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
+  height: 100px;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
 }
 
 h1 {
-    justify-content: left;
+  justify-content: left;
 }
 
 .bouton_header {
-    background-color: brown;
-    border-radius: 15px;
-    padding: 10px;
-    color: white;
-    margin: 0 20px;
+  background-color: brown;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  margin: 0 20px;
 }
 
-.header>a:hover {
-    box-shadow: 0 1px 3px 0 black;
+.header > a:hover {
+  box-shadow: 0 1px 3px 0 black;
 }
 
 .navigation {
-    width: 150px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: lightseagreen;
-    padding: 0px 0px 0px 15px;
-
+  width: 150px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: lightseagreen;
+  padding: 0px 0px 0px 15px;
 }
 
-.navigation>a {
-    color: crimson;
-    margin: 5px 0;
+.navigation > a {
+  color: crimson;
+  margin: 5px 0;
 }
 
-.navigation>a:hover {
-    left: 15px;
+.navigation > a:hover {
+  left: 15px;
 }
 
 label {
-    margin: 8px 0 8px 0;
-    padding: 8px 0 8px 0;
+  margin: 8px 0 8px 0;
+  padding: 8px 0 8px 0;
 }
 
 input {
-    margin: 4px 5px 5px 10px;
+  margin: 4px 5px 5px 10px;
 }
 
-#coordonnees>input {
-    width: -webkit-fill-available;
+#coordonnees > input {
+  width: -webkit-fill-available;
 }
 
 .bouton {
-    width: max-content;
-    margin: 15px 0;
-    padding: 12px 7px;
-    background-color: darksalmon;
-    border: 0;
-    border-radius: 15px;
+  width: max-content;
+  margin: 15px 0;
+  padding: 12px 7px;
+  background-color: darksalmon;
+  border: 0;
+  border-radius: 15px;
 }
 
 .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-#reservation>.bouton {
-    align-self: flex-end;
-    width: 100%;
-    text-align: center;
+#reservation > .bouton {
+  align-self: flex-end;
+  width: 100%;
+  text-align: center;
 }
