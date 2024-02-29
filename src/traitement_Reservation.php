@@ -22,6 +22,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
     } else {
         header('location: ../index.php?email=' . ERREUR_EMAIL);
     }
+
     $totalPrixPass =  0;
     $nombrePlaces = isset($_POST['nombrePlaces']) ? htmlspecialchars(strip_tags((int)$_POST['nombrePlaces'])) :  0;
     $tarifReduit = isset($_POST['tarifReduit']) ? htmlspecialchars(strip_tags((bool)$_POST['tarifReduit'])) : false;
@@ -101,7 +102,16 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
         }
     }
 
+    if (!empty($_POST['nombrePlaces'])) {
+        header('location: ../index.php?email=' . ERREUR_CHAMP_VIDE);
+    }
+
+    if (!empty($_POST['pass1jour']) || !empty($_POST['pass1jourReduction']) || !empty($_POST['pass2jours']) || !empty($_POST['pass2joursReduction']) || !empty($_POST['pass3jours']) || !empty($_POST['pass3joursReduction'])) {
+        header('location: ../index.php?email=' . ERREUR_CHAMP_VIDE);
+    }
     //prix et nombre de nuit pour la tente 
+    $Prix_jour_tente = 0;
+    $nombre_de_nuit_tente = 0;
     if (!empty($_POST['tenteNuit1']) || !empty($_POST['tenteNuit2']) || !empty($_POST['tenteNuit3']) || !empty($_POST['tente3Nuits'])) {
         $tenteNuit1 = isset($_POST['tenteNuit1']) ? htmlspecialchars(strip_tags($_POST['tenteNuit1'])) : false;
         $tenteNuit2 = isset($_POST['tenteNuit2']) ? htmlspecialchars(strip_tags($_POST['tenteNuit2'])) : false;
@@ -132,7 +142,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
             $nombre_de_nuit_tente = 3;
         }
     }
-
+    $NombreLugesEte = 0;
     $Prix_jour_van =  0;
     $nombre_de_nuit_van =  0;
     //prix et nombre de nuit pour le van  
@@ -163,6 +173,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
             $nombre_de_nuit_van = 3;
         }
     }
+
     $nombreCasquesEnfants = 0;
     #ckeck si la cose enfant est coché 
     if (isset($_POST['enfantsOui']) && !empty($_POST['enfantsOui'])) {
@@ -177,7 +188,7 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
     if (!empty($_POST['nombrePlaces']) && isset($_POST['nombrePlaces'])) {
         htmlspecialchars(strip_tags($_POST['nombrePlaces']));
         $nombrePlaces = (int) $_POST['nombrePlaces'];
-        $NombreLugesEte = (int) $_POST['NombreLugesEte'];
+        $NombreLugesEte = isset($_POST['NombreLugesEte']) ? (int) $_POST['NombreLugesEte'] : 0;
         $checktarif = (bool) isset($_POST['tarifReduit']);
         if ($checktarif == false) {
             $totalPrixPass += (int) ($nombrePlaces * (($NombreLugesEte * 5) + $Prix_jour_tente)) + ($nombreCasquesEnfants * 2) + $Prix_jour_van;
