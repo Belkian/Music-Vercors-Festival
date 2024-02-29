@@ -37,7 +37,8 @@ if (isset($_GET['erreur'])) {
                 <button class="btn decrease">-</button><button class="btn increase">+</button>
                 <h3>Réservation(s) en tarif réduit</h3>
                 <input type="checkbox" name="tarifReduit" id="tarifReduit">
-                <label for="tarifReduit">Ma réservation sera en tarif réduit</label>
+                <label for="tarifReduit">Ma réservation sera en tarif réduit*</label>
+                <p class="textTarifReduit">* Aucune réduction n’est applicable après le paiement de la commande. La présentation d’un justificatif est obligatoire pour les tarifs réduits liés à l’âge, demandeurs d’emploi (inscrits au pôle emploi en France), bénéficiaires des minima sociaux et détenteurs de la carte de handicap.</p>
 
                 <h3>Choisissez votre formule :</h3>
                 <section class="sectionInputs">
