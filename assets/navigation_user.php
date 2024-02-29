@@ -5,6 +5,6 @@
 
     <a href="">Mes reservations</a>
     <a href="">Réserver</a>
-    <a href="">Paramétre</a>
+    <a href="">Parametres</a>
 
 </div>

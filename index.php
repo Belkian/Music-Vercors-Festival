@@ -13,6 +13,9 @@ if (isset($_GET['erreur'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script type="module" src="./assets/script.js" defer></script>
     <title>Formulaire de réservation Music Vercos Festival</title>
 </head>
@@ -47,12 +50,20 @@ if (isset($_GET['erreur'])) {
 
                 <!-- Si case cochée, afficher le choix du jour -->
                 <section id="pass1jourDate" class="blocPassInvisible">
-                    <input type="checkbox" name="choixJour1" id="choixJour1" class="choixPass1Jour">
-                    <label for="choixJour1">Pass pour la journée du 01/07</label>
-                    <input type="checkbox" name="choixJour2" id="choixJour2" class="choixPass1Jour">
-                    <label for="choixJour2">Pass pour la journée du 02/07</label>
-                    <input type="checkbox" name="choixJour3" id="choixJour3" class="choixPass1Jour">
-                    <label for="choixJour3">Pass pour la journée du 03/07</label>
+                    <div class="colonnes">
+                        <div>
+                            <input type="checkbox" name="choixJour1" id="choixJour1" class="choixPass1Jour">
+                            <label for="choixJour1">Pass pour la journée du 01/07</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="choixJour2" id="choixJour2" class="choixPass1Jour">
+                            <label for="choixJour2">Pass pour la journée du 02/07</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="choixJour3" id="choixJour3" class="choixPass1Jour">
+                            <label for="choixJour3">Pass pour la journée du 03/07</label>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="sectionInputs">
@@ -65,10 +76,16 @@ if (isset($_GET['erreur'])) {
 
                 <!-- Si case cochée, afficher le choix des jours -->
                 <section id="pass2joursDate" class="blocPassInvisible">
-                    <input type="checkbox" name="choixJour12" id="choixJour12" class="choixPass2Jours">
-                    <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
-                    <input type="checkbox" name="choixJour23" id="choixJour23" class="choixPass2Jours">
-                    <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
+                    <div class="colonnes">
+                        <div>
+                            <input type="checkbox" name="choixJour12" id="choixJour12" class="choixPass2Jours">
+                            <label for="choixJour12">Pass pour deux journées du 01/07 au 02/07</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="choixJour23" id="choixJour23" class="choixPass2Jours">
+                            <label for="choixJour23">Pass pour deux journées du 02/07 au 03/07</label>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="sectionInputs">

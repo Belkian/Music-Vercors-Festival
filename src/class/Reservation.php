@@ -136,6 +136,7 @@ class Reservation
             $this->_Id = $Id;
         }
     }
+
     public function Id_Reservation()
     {
         $Database_reservation = new Database_reservation();
@@ -157,6 +158,7 @@ class Reservation
         }
         return $i;
     }
+    
     function getObject_Recap(): array
     {
         return [
