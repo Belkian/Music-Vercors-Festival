@@ -137,6 +137,12 @@ fieldset {
   flex-direction: column;
 }
 
+.fieldsetInscription{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
 legend {
   font-size: 30px;
   font-weight: bold;

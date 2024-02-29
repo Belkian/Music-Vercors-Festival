@@ -28,26 +28,26 @@ if (isset($_GET['erreur'])) {
         <?php readfile('./assets/navigation.php'); ?>
 
         <form action="/src/traitement_User.php" method="post" onsubmit="return Validation()">
-            <fieldset>
-                <h1>Formulaire d'inscription</h1>
+            <fieldset class="fieldsetInscription">
+                <h2>Formulaire d'inscription</h1>
 
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" required><br>
+                <div><label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required></div>
 
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" required><br>
+                <div><label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required></div>
 
-                <label for="mail">Mail :</label>
-                <input type="email" id="mail" name="mail" required><br>
+                <div><label for="mail">Mail :</label>
+                <input type="email" id="mail" name="mail" required></div>
                 <?php
                 if ($code_erreur === 1) {
                 ?><p class='error'>Le mail n'est pas valide."</p>
                 <?php } ?>
 
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required><br>
-                <label for="password2">Vérifier le Mot de passe :</label>
-                <input type="password" id="password2" name="password2" required><br>
+                <div><label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required></div>
+                <div><label for="password2">Vérifier le Mot de passe :</label>
+                <input type="password" id="password2" name="password2" required></div>
                 <?php if ($code_erreur === 3) { ?>
                     <p class='message error'>Les deux mots de passe doivent être identique.</p>
                 <?php } ?>
