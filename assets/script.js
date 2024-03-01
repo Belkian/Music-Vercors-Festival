@@ -1,15 +1,11 @@
 import changerNombreFormulaire from "./changerNombreFormulaire.js";
 import checkTarifReduit from "./checkTarifReduit.js";
 import checkOptions from "./checkReservation.js";
-// import changerNombreLuges from "./changerNombreLuges.js";
-// import changerNombreCasques from "./changerNombreCasques.js";
 import { checkTente, checkVan, checkEnfants } from "./Section-Options.js";
 
 changerNombreFormulaire();
 checkTarifReduit();
 checkOptions();
-// changerNombreLuges();
-// changerNombreCasques();
 checkTente();
 checkVan();
 checkEnfants();
@@ -21,7 +17,6 @@ document.querySelector("#reservation").style.display = "block";
 
 bouton.forEach((bouton) => {
   bouton.addEventListener("click", function () {
-    // event.preventDefault();
     if (bouton.classList.contains("reservation")) {
       document.querySelector("#options").style.opacity = 0 + "%";
       setTimeout(() => {
@@ -58,4 +53,5 @@ bouton.forEach((bouton) => {
       document.querySelector("#reservation").style.display = "none";
     }
   });
+  
 });
