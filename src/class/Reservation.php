@@ -2,6 +2,7 @@
 
 class Reservation
 {
+    private $_Id;
     private $_Tarif;
     private $_NombrePlaces;
     private $_NombreLugesEte;
@@ -11,7 +12,6 @@ class Reservation
     private $_Prix_jour_tente;
     private $_Nombre_de_nuit_tente;
     private $_Email;
-    private $_Id;
     /**
      * [__construct description]
      *
@@ -25,7 +25,7 @@ class Reservation
      * @param   [int]  $Nombre_de_nuit_tente  [$Nombre_de_nuit_tente description]
      * @param   [string]  $Email                 [$Email description]
      * @param   int                            [ description]
-     * @param   string  $Id                    [$Id description]
+     * @param   int  $Id                    [$Id description]
      *
      * @return  [type]                         [return description]
      */
@@ -136,6 +136,7 @@ class Reservation
             $this->_Id = $Id;
         }
     }
+
     public function Id_Reservation()
     {
         $Database_reservation = new Database_reservation();
@@ -157,6 +158,7 @@ class Reservation
         }
         return $i;
     }
+    
     function getObject_Recap(): array
     {
         return [
