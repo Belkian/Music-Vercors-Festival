@@ -19,7 +19,7 @@ final class Database_reservation
         $Reservations = [];
 
         while (($ligne = fgetcsv($fichier, 1000, ",")) !== false) {
-            $Reservations[] = new Reservation($ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[0], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9]);
+            $Reservations[] = new Reservation($ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9]);
         }
         fclose($fichier);
         return $Reservations;

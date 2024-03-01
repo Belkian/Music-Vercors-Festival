@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
     // abort
-    header('location:tableauDeBord.php');
+    header('location:TableauDeBord.php');
     die;
 }
 $code_erreur = null;
