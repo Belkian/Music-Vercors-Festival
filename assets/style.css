@@ -30,6 +30,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .logo {
   width: 20%;
+  margin-top: 2%;
 }
 
 .header {
