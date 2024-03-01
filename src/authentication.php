@@ -17,7 +17,7 @@ if (!empty($_POST['email']) && !empty($_POST['password']) && isset($_POST['email
         if (password_verify($_POST['password'], $userAvecCeMail->getpassword())) {
             $_SESSION['connecté'] = true;
             $_SESSION['user'] = serialize($userAvecCeMail);
-            header('location: ../tableauDeBord.php');
+            header('location: ../TableauDeBord.php');
             exit;
         }
     }
