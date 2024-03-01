@@ -19,39 +19,24 @@ final class Database_reservation
         $Reservations = [];
 
         while (($ligne = fgetcsv($fichier, 1000, ",")) !== false) {
-            $Reservations[] = new Reservation($ligne[2], $ligne[3], $ligne[4], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[1], $ligne[0]);
+            $Reservations[] = new Reservation($ligne[0], $ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[0], $ligne[5], $ligne[6], $ligne[7], $ligne[8], $ligne[9]);
         }
         fclose($fichier);
         return $Reservations;
     }
 
-    public function find_Reservation_By_Email(string $email): User|bool
+    public function find_Reservation_By_Email(string $email): Reservation|bool
     {
         $fichier = fopen($this->_DB, "r");
-        while (($user = fgetcsv($fichier, 1000, ",")) !== false) {
-            if ($user[3] === $email) {
-                $user = new User($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
+        while (($Reservation = fgetcsv($fichier, 1000, ",")) !== false) {
+            if ($Reservation[8] === $email) {
+                $Reservation = new Reservation($Reservation[0], $Reservation[1], $Reservation[2], $Reservation[3], $Reservation[4], $Reservation[5], $Reservation[6], $Reservation[7], $Reservation[8], $Reservation[9]);
                 break;
             } else {
-                $user = false;
+                $Reservation = false;
             }
         }
         fclose($fichier);
-        return $user;
-    }
-
-    public function findUserById(int $id): User|bool
-    {
-        $fichier = fopen($this->_DB, "r");
-        while (($user = fgetcsv($fichier, 500, ",")) !== false) {
-            if ($user[0] === $id) {
-                $user = new User($user[1], $user[2], $user[3], $user[4], $user[0], $user[5]);
-                break;
-            } else {
-                $user = false;
-            }
-        }
-        fclose($fichier);
-        return $user;
+        return $Reservation;
     }
 }

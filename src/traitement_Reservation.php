@@ -101,6 +101,93 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
             $totalPrixPass = 65 * $nombrePlaces;
         }
     }
+    $totalPrixPass =  0;
+    $nombrePlaces = isset($_POST['nombrePlaces']) ? htmlspecialchars(strip_tags((int)$_POST['nombrePlaces'])) :  0;
+    $tarifReduit = isset($_POST['tarifReduit']) ? htmlspecialchars(strip_tags((bool)$_POST['tarifReduit'])) : false;
+    //pass 1 jour
+    if (isset($_POST['pass1jour']) && !empty($_POST['pass1jour']) || !empty($_POST['pass1jourReduction']) && !empty($_POST['pass1jourReduction'])) {
+        $pass1jour = isset($_POST['pass1jour']) ? htmlspecialchars(strip_tags((bool)$_POST['pass1jour'])) : false;
+        $choixJour1 = isset($_POST['choixJour1']) ? htmlspecialchars(strip_tags((bool)$_POST['choixJour1'])) : false;
+        $choixJour2 = isset($_POST['choixJour2']) ? htmlspecialchars(strip_tags((bool)$_POST['choixJour2'])) : false;
+        $choixJour3 = isset($_POST['choixJour3']) ? htmlspecialchars(strip_tags((bool)$_POST['choixJour3'])) : false;
+        $pass1jourReduction = isset($_POST['pass1jourReduction']) ? htmlspecialchars(strip_tags((bool)$_POST['pass1jourReduction'])) : false;
+
+        // Validation des pass 1 jour
+        if ($pass1jour == true) {
+            if ($choixJour1 == true) {
+                $totalPrixPass += 40 * $nombrePlaces;
+            }
+            if ($choixJour2 == true) {
+                $totalPrixPass += 40 * $nombrePlaces;
+            }
+            if ($choixJour3 == true) {
+                $totalPrixPass += 40 * $nombrePlaces;
+            }
+        }
+
+        // Prix des pass 1 jour avec réduction
+        if ($tarifReduit == true && $pass1jourReduction == true) {
+            if ($choixJour1 == true) {
+                $totalPrixPass += 25 * $nombrePlaces;
+            }
+            if ($choixJour2 == true) {
+                $totalPrixPass += 25 * $nombrePlaces;
+            }
+            if ($choixJour3 == true) {
+                $totalPrixPass += 25 * $nombrePlaces;
+            }
+        }
+        var_dump((bool)$pass1jour);
+        var_dump((bool)$pass1jourReduction);
+        var_dump((bool)$tarifReduit);
+        var_dump($totalPrixPass);
+    }
+
+    if (isset($_POST['pass2jours']) && !empty($_POST['pass2jours']) || !empty($_POST['pass2joursReduction']) && !empty($_POST['pass2joursReduction'])) {
+        $nombrePlaces = isset($_POST['nombrePlaces']) ? htmlspecialchars(strip_tags((int)$_POST['nombrePlaces'])) :  0;
+        $tarifReduit = isset($_POST['tarifReduit']) ? htmlspecialchars(strip_tags((bool)$_POST['tarifReduit'])) : false;
+        $pass2jours = isset($_POST['pass2jours']) ? htmlspecialchars(strip_tags((bool)$_POST['pass2jours'])) : false;
+        $choixJour12 = isset($_POST['choixJour12']) ? htmlspecialchars(strip_tags((bool)$_POST['choixJour12'])) : false;
+        $choixJour23 = isset($_POST['choixJour23']) ? htmlspecialchars(strip_tags((bool)$_POST['choixJour23'])) : false;
+        $pass2joursReduction = isset($_POST['pass2joursReduction']) ? htmlspecialchars(strip_tags((bool)$_POST['pass2joursReduction'])) : false;
+
+        // Validation des pass 2 jours
+        if ($pass2jours == true) {
+            if ($choixJour12 == true) {
+                $totalPrixPass = 70 * $nombrePlaces;
+            }
+            if ($choixJour23 == true) {
+                $totalPrixPass = 70 * $nombrePlaces;
+            }
+        }
+        if ($tarifReduit == true && $pass2joursReduction == true) {
+            if ($choixJour12 == true) {
+                $totalPrixPass = 50 * $nombrePlaces;
+            }
+            if ($choixJour23 == true) {
+                $totalPrixPass = 50 * $nombrePlaces;
+            }
+        }
+        var_dump((bool)$pass2jours);
+        var_dump((bool)$pass2joursReduction);
+        var_dump((bool)$choixJour12);
+        var_dump((bool)$tarifReduit);
+        var_dump($totalPrixPass);
+    }
+
+
+    if (isset($_POST['pass3jours']) && !empty($_POST['pass3jours']) || !empty($_POST['pass3joursReduction']) && !empty($_POST['pass3joursReduction'])) {
+        $pass3jours = isset($_POST['pass3jours']) ? htmlspecialchars(strip_tags((bool)$_POST['pass3jours'])) : false;
+        $pass3joursReduction = isset($_POST['pass3joursReduction']) ? htmlspecialchars(strip_tags((bool)$_POST['pass3joursReduction'])) : false;
+
+        // Validation des pass 3 jours
+        if ($pass3jours == true) {
+            $totalPrixPass = 100 * $nombrePlaces;
+        }
+        if ($tarifReduit == true && $pass3joursReduction == true) {
+            $totalPrixPass = 65 * $nombrePlaces;
+        }
+    }
 
     if (!empty($_POST['nombrePlaces'])) {
         header('location: ../index.php?email=' . ERREUR_CHAMP_VIDE);
