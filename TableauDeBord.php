@@ -37,15 +37,19 @@ $email = $user->getMail();
             <h2>Récapitulatif de votre commande</h2>
             <?php
             $database_reservation = new Database_reservation();
-            $database_reservation_utilisateur = $database_reservation->find_Reservation_By_Email($email);
-
-            if (!empty($database_reservation_utilisateur)) { ?>
-
-                <p>Le tarif de votre commande est de <?php echo $database_reservation_utilisateur->getTarif(); ?>€</p>
-                <p>Vous avez commander <?php echo $database_reservation_utilisateur->getNombrePlaces(); ?> place(s)</p>
-                <p>Vous avez reserver <?php echo $database_reservation_utilisateur->getNombreLugesEte(); ?> luge(s)</p>
-                <p>Vous avez reserver <?php echo $database_reservation_utilisateur->getNombreCasquesEnfants(); ?> casques pour enfants</p>
-            <?php } else { ?>
+            $database_reservation_utilisateur = $database_reservation->Toute_Les_Reservations();
+            if (!empty($database_reservation_utilisateur)) {
+                foreach ($database_reservation_utilisateur as $user_resa) {
+                    if ($user_resa->getEmail() == $email) { ?>
+                        <p>Le tarif de votre commande est de <?php echo $user_resa->getTarif(); ?>€</p>
+                        <p>Vous avez commander <?php echo $user_resa->getNombrePlaces(); ?> place(s)</p>
+                        <p>Vous avez reserver <?php echo $user_resa->getNombreLugesEte(); ?> luge(s)</p>
+                        <p>Vous avez reserver <?php echo $user_resa->getNombreCasquesEnfants(); ?> casques pour enfants</p>
+                        <input type="button" value="Supprimer ma reservation">
+                <?php
+                    }
+                }
+            } else { ?>
                 <p>Vous n'avez pas encore de réservation</p>
             <?php } ?>
 
