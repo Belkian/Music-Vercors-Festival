@@ -1,9 +1,23 @@
 <?php
 session_start();
-$Messages_Erreurs = [];
+require 'src/config.php';
+require 'src/class/User.php';
+require 'src/class/Database_Reservation.php';
+require 'src/class/Reservation.php';
+$Messages_Erreurs = null;
+
 if (isset($_GET['erreur'])) {
     $Messages_Erreurs = (int) $_GET['erreur'];
 }
+
+if (!isset($_SESSION['connecté']) && empty($_SESSION['user'])) {
+    // abort
+    header('location: connexion.php');
+    die;
+}
+
+$user = unserialize($_SESSION['user']);
+$email = $user->getMail();
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +37,9 @@ if (isset($_GET['erreur'])) {
 <body>
 
 
-    <?php readfile('./assets/header_user.php'); ?>
+    <?php include './assets/header_user.php'; ?>
     <div id="main">
-        <?php readfile('./assets/navigation_user.php'); ?>
+        <?php include './assets/navigation_user.php'; ?>
         <form action="./src/traitement_Reservation.php" id="inscription" method="post">
             <fieldset id="reservation">
                 <legend>Réservation</legend>
@@ -99,7 +113,7 @@ if (isset($_GET['erreur'])) {
 
                 <!-- FACULTATIF : ajouter un pass groupe (5 adultes : 150€ / jour) uniquement pass 1 jour -->
 
-                <p class="bouton options" onclick="suivant('option')">Suivant</p>
+                <p class="bouton options">Suivant</p>
             </fieldset>
             <fieldset id="options">
                 <legend>Options</legend>
