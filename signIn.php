@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
-    // abort
-    header('location:TableauDeBord.php');
-    die;
-}
+// if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
+//     // abort
+//     header('location:TableauDeBord.php');
+//     die;
+// }
 $Messages_Erreurs = null;
 if (isset($_GET['erreur'])) {
     $Messages_Erreurs = (int) $_GET['erreur'];
@@ -23,9 +23,9 @@ if (isset($_GET['erreur'])) {
 </head>
 
 <body>
-    <?php readfile('./assets/header.php'); ?>
+    <?php include './assets/header.php'; ?>
     <div id="main">
-        <?php readfile('./assets/navigation.php'); ?>
+        <?php include './assets/navigation.php'; ?>
 
         <form action="/src/traitement_User.php" method="post" onsubmit="return Validation()">
             <fieldset class="fieldsetInscription">

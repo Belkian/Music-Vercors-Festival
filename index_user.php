@@ -10,6 +10,14 @@ if (isset($_GET['erreur'])) {
     $Messages_Erreurs = (int) $_GET['erreur'];
 }
 
+if (!isset($_SESSION['connecté']) && empty($_SESSION['user'])) {
+    // abort
+    header('location: connexion.php');
+    die;
+}
+
+$user = unserialize($_SESSION['user']);
+$email = $user->getMail();
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +37,9 @@ if (isset($_GET['erreur'])) {
 <body>
 
 
-    <?php include './assets/header.php'; ?>
+    <?php include './assets/header_user.php'; ?>
     <div id="main">
-        <?php include './assets/navigation.php'; ?>
+        <?php include './assets/navigation_user.php'; ?>
         <form action="./src/traitement_Reservation.php" id="inscription" method="post">
             <fieldset id="reservation">
                 <legend>Réservation</legend>

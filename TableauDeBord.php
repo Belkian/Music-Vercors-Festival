@@ -2,8 +2,9 @@
 session_start();
 require './src/config.php';
 require 'src/class/User.php';
-require 'src/class/Database_Reservation.php';
+require 'src/class/Database_reservation.php';
 require 'src/class/Reservation.php';
+
 $Messages_Erreurs = null;
 if (isset($_GET['erreur'])) {
     $Messages_Erreurs = (int) $_GET['erreur'];
@@ -11,7 +12,7 @@ if (isset($_GET['erreur'])) {
 
 if (!isset($_SESSION['connecté']) && empty($_SESSION['user'])) {
     // abort
-    header('location: connexion.php');
+    header('location: ./connexion.php');
     die;
 }
 $user = unserialize($_SESSION['user']);
