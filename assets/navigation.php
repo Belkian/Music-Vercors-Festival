@@ -7,4 +7,6 @@
     <a href="">Réserver</a>
     <a href="">Parametres</a>
 
+<div class="navigation">
+    <a href="./index.php">Réserver</a>
 </div>
