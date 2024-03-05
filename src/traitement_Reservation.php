@@ -137,10 +137,6 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
                 $totalPrixPass += 25 * $nombrePlaces;
             }
         }
-        var_dump((bool)$pass1jour);
-        var_dump((bool)$pass1jourReduction);
-        var_dump((bool)$tarifReduit);
-        var_dump($totalPrixPass);
     }
 
     if (isset($_POST['pass2jours']) && !empty($_POST['pass2jours']) || !empty($_POST['pass2joursReduction']) && !empty($_POST['pass2joursReduction'])) {
@@ -168,11 +164,6 @@ if (!empty($_POST['nom']) && isset($_POST['nom']) && !empty($_POST['prenom']) &&
                 $totalPrixPass = 50 * $nombrePlaces;
             }
         }
-        var_dump((bool)$pass2jours);
-        var_dump((bool)$pass2joursReduction);
-        var_dump((bool)$choixJour12);
-        var_dump((bool)$tarifReduit);
-        var_dump($totalPrixPass);
     }
 
 

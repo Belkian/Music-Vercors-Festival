@@ -6,20 +6,14 @@ final class Database
     {
         $this->_DB = __DIR__ . "/../csv/user.csv";
     }
-    public function saveUtilisateur(User $User): bool
-    {
-        $fichier = fopen($this->_DB, "ab");
-        $retour = fputcsv($fichier, $User->getObjectToArray());
-        fclose($fichier);
-        return $retour;
-    }
+
     public function ToutLesUtilisateurs(): array
     {
         $fichier = fopen($this->_DB, "r");
         $utilisateur = [];
 
         while (($ligne = fgetcsv($fichier, 1000, ",")) !== false) {
-            $utilisateur[] = new User($ligne[1], $ligne[2], $ligne[4], $ligne[3], $ligne[0], $ligne[5]);
+            $utilisateur[] = new User($ligne[1], $ligne[2], $ligne[3], $ligne[4], $ligne[0], $ligne[5]);
         }
         fclose($fichier);
         return $utilisateur;
@@ -53,5 +47,30 @@ final class Database
         }
         fclose($fichier);
         return $user;
+    }
+
+    public function saveUtilisateur(User $User): bool
+    {
+        $fichier = fopen($this->_DB, "ab");
+        $retour = fputcsv($fichier, $User->getObjectToArray());
+        fclose($fichier);
+        return $retour;
+    }
+
+    public function supprimerUtilisateur(int $IdUser): bool
+    {
+        if ($this->findUserById($IdUser)) {
+            $utilisateurs = $this->ToutLesUtilisateurs();
+            $fichier = fopen($this->_DB, 'w');
+            foreach ($utilisateurs as $utilisateur) {
+                if ($utilisateur->getId() !== $IdUser) {
+                    $retour = fputcsv($fichier, $utilisateur->getObjectToArray());
+                }
+            }
+            fclose($fichier);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

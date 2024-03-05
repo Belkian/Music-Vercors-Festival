@@ -8,6 +8,7 @@ class User
     private $_password;
     // #
     private $_logged;
+    private $_role;
     /**
      * [__construct description]
      *
@@ -23,7 +24,7 @@ class User
      * @return  [type]             [return description]
      */
 
-    public function __construct(string $Nom, string $Prenom, string $Mail, string $password, int|string $id = "à créer", bool $logged = false)
+    public function __construct(string $Nom, string $Prenom, string $Mail, string $password, int|string $id = "à créer", bool $logged = false, string $role = "user")
     {
         $this->setId($id);
         $this->setNom($Nom);
@@ -31,6 +32,7 @@ class User
         $this->setMail($Mail);
         $this->setpassword($password);
         $this->setLogged($logged);
+        $this->setRole($role);
     }
 
     public function getId(): int
@@ -103,6 +105,25 @@ class User
         $this->setLogged(false);
     }
 
+    public function getRole(): string
+    {
+        return $this->_role;
+    }
+
+    public function setRole(string $role): void
+    {
+        $this->_role = $role;
+    }
+
+    public function admin()
+    {
+        if ($this->getRole() == "admin") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getObjectToArray(): array
     {
         return [
@@ -111,7 +132,8 @@ class User
             'Prenom' => $this->getPrenom(),
             'Mail' => $this->getMail(),
             'password' => $this->getpassword(),
-            'logged' => $this->getLogged()
+            'logged' => $this->getLogged(),
+            'role' => $this->getRole()
         ];
     }
 
@@ -120,12 +142,12 @@ class User
         return password_verify($password, $this->getpassword());
     }
 
-    public function id_utilisateur()
+    private function id_utilisateur()
     {
         $Database = new Database();
-        $utilisateur = $Database->ToutLesUtilisateurs();
+        $utilisateurs = $Database->ToutLesUtilisateurs();
         $Ids = [];
-        foreach ($utilisateur as $utilisateur) {
+        foreach ($utilisateurs as $utilisateur) {
             $Ids[] = $utilisateur->getId();
         }
         $i = 1;
@@ -133,10 +155,8 @@ class User
         while ($unique === false) {
             if (in_array($i, $Ids)) {
                 $i++;
-                $unique = false;
             } else {
                 $unique = true;
-                break;
             }
         }
         return $i;
