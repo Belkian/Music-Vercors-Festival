@@ -1,9 +1,9 @@
 <?php
 session_start();
 require './src/config.php';
-require 'src/class/User.php';
-require 'src/class/Database_reservation.php';
-require 'src/class/Reservation.php';
+require './src/class/User.php';
+require './src/class/Database_reservation.php';
+require './src/class/Reservation.php';
 
 $Messages_Erreurs = null;
 if (isset($_GET['erreur'])) {

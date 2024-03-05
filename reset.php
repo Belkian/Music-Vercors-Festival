@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header('location: ./Brief_php/connexion.php');
+header('location:connexion.php');
 exit;

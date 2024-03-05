@@ -29,9 +29,9 @@ if (isset($_GET['erreur'])) {
 <body>
 
 
-    <?php include './assets/header.php'; ?>
+    <?php readfile('./assets/header.php'); ?>
     <div id="main">
-        <?php include './assets/navigation.php'; ?>
+        <?php readfile('./assets/navigation.php'); ?>
         <form action="./src/traitement_Reservation.php" id="inscription" method="post">
             <fieldset id="reservation">
                 <legend>Réservation</legend>

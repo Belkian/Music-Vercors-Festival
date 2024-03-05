@@ -1,10 +1,10 @@
 <?php
 session_start();
-// if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
-//     // abort
-//     header('location:TableauDeBord.php');
-//     die;
-// }
+if (isset($_SESSION['connecté']) && !empty($_SESSION['user'])) {
+    // abort
+    header('location:TableauDeBord.php');
+    die;
+}
 $Messages_Erreurs = null;
 if (isset($_GET['erreur'])) {
     $Messages_Erreurs = (int) $_GET['erreur'];

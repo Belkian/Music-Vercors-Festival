@@ -19,10 +19,9 @@ if (isset($_GET['erreur'])) {
 </head>
 
 <body>
-    <?php include './assets/header.php'; ?>
-
+    <?php readfile('./assets/header.php'); ?>
     <div id="main">
-        <?php include './assets/navigation.php'; ?>
+        <?php readfile('./assets/navigation.php'); ?>
         <form action="src/authentication.php" method="post" onsubmit="return Validation()">
             <fieldset class="fieldsetConnexion">
                 <h2>Connexion</h1>

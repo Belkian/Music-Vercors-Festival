@@ -4,7 +4,7 @@ final class Database_reservation
     private $_DB;
     public function __construct()
     {
-        $this->_DB = __DIR__ . "../csv/reservation.csv";
+        $this->_DB = __DIR__ . "/../csv/reservation.csv";
     }
     public function save_reservation(Reservation $Reservation): bool
     {
